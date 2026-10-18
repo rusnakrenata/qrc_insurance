@@ -1,0 +1,82 @@
+{
+  "events": [
+    {
+      "stage": "execute_total",
+      "started_utc": "2026-10-10T13:34:51.705680+00:00",
+      "status": "complete",
+      "elapsed_seconds": 5756.529417499958,
+      "finished_utc": "2026-10-10T15:10:48.235133+00:00"
+    },
+    {
+      "stage": "authentication",
+      "started_utc": "2026-10-10T13:34:54.444546+00:00",
+      "status": "complete",
+      "elapsed_seconds": 3.500026650726795e-06,
+      "finished_utc": "2026-10-10T13:34:54.444579+00:00"
+    },
+    {
+      "stage": "backend_loading",
+      "started_utc": "2026-10-10T13:34:54.446043+00:00",
+      "status": "complete",
+      "elapsed_seconds": 0.7222655999939889,
+      "finished_utc": "2026-10-10T13:34:55.168337+00:00"
+    },
+    {
+      "stage": "chunk_compilation",
+      "started_utc": "2026-10-10T13:34:58.022882+00:00",
+      "status": "complete",
+      "elapsed_seconds": 276.1803412999725,
+      "finished_utc": "2026-10-10T13:39:34.203245+00:00"
+    },
+    {
+      "stage": "chunk_submission",
+      "started_utc": "2026-10-10T13:39:58.632158+00:00",
+      "status": "complete",
+      "elapsed_seconds": 119.52217670000391,
+      "finished_utc": "2026-10-10T13:41:58.154371+00:00"
+    },
+    {
+      "stage": "chunk_wait_and_result",
+      "started_utc": "2026-10-10T13:41:58.160679+00:00",
+      "status": "complete",
+      "elapsed_seconds": 659.8922165000113,
+      "finished_utc": "2026-10-10T13:52:58.052923+00:00"
+    },
+    {
+      "stage": "chunk_scoring",
+      "started_utc": "2026-10-10T13:53:09.789332+00:00",
+      "status": "complete",
+      "elapsed_seconds": 0.6252080999547616,
+      "finished_utc": "2026-10-10T13:53:10.414568+00:00"
+    },
+    {
+      "stage": "chunk_compilation",
+      "started_utc": "2026-10-10T13:53:14.267344+00:00",
+      "status": "complete",
+      "elapsed_seconds": 257.1139791000169,
+      "finished_utc": "2026-10-10T13:57:31.381338+00:00"
+    },
+    {
+      "stage": "chunk_submission",
+      "started_utc": "2026-10-10T13:57:52.358322+00:00",
+      "status": "complete",
+      "elapsed_seconds": 72.88425020000432,
+      "finished_utc": "2026-10-10T13:59:05.242597+00:00"
+    },
+    {
+      "stage": "chunk_wait_and_result",
+      "started_utc": "2026-10-10T13:59:05.249054+00:00",
+      "status": "complete",
+      "elapsed_seconds": 4297.100623800012,
+      "finished_utc": "2026-10-10T15:10:42.349975+00:00"
+    },
+    {
+      "stage": "chunk_scoring",
+      "started_utc": "2026-10-10T15:10:47.461498+00:00",
+      "status": "complete",
+      "elapsed_seconds": 0.6218204000033438,
+      "finished_utc": "2026-10-10T15:10:48.083355+00:00"
+    }
+  ],
+  "note": "Elapsed wall seconds; nested events overlap and must not be summed. IBM job metrics separately record queue, execution and charged time."
+}

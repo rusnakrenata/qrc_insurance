@@ -1,0 +1,31 @@
+{
+  "candidate": 4,
+  "approach": "hardware-aware",
+  "n": 232,
+  "layout": [
+    80,
+    81,
+    82,
+    83,
+    96,
+    103
+  ],
+  "job_ids": [
+    "db4bp9o4qg6s73c1vde0",
+    "db4c0lslf4us73c2hpvg",
+    "db4cmakvf2bc73cue1eg"
+  ],
+  "calibration_policy": "record_drift",
+  "shots": 2048,
+  "optimization_level": 1,
+  "qpu": {
+    "rmse": 6.284902817848779,
+    "mae": 5.095814573787228,
+    "bias": 1.7216825803256743
+  },
+  "ideal": {
+    "rmse": 5.660942216987966,
+    "mae": 4.344474974785692,
+    "bias": -1.541416830667352
+  }
+}

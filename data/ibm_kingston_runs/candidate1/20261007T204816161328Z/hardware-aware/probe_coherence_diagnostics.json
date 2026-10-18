@@ -1,0 +1,62 @@
+[
+  {
+    "layout": [
+      74,
+      75,
+      59,
+      55,
+      73,
+      79
+    ],
+    "physical_qubit": 73,
+    "max_duration_us": 15.592000000000036,
+    "t1_s": 0.0004201250839441923,
+    "t2_s": 6.100973478272854e-05,
+    "memory_coherence_feasible": true
+  },
+  {
+    "layout": [
+      74,
+      75,
+      59,
+      55,
+      73,
+      79
+    ],
+    "physical_qubit": 79,
+    "max_duration_us": 15.592000000000036,
+    "t1_s": 0.0002311012812065407,
+    "t2_s": 8.515430220401072e-05,
+    "memory_coherence_feasible": true
+  },
+  {
+    "layout": [
+      93,
+      79,
+      73,
+      74,
+      94,
+      95
+    ],
+    "physical_qubit": 94,
+    "max_duration_us": 15.592000000000036,
+    "t1_s": 0.00030213197453369276,
+    "t2_s": 0.00022426577079091912,
+    "memory_coherence_feasible": true
+  },
+  {
+    "layout": [
+      93,
+      79,
+      73,
+      74,
+      94,
+      95
+    ],
+    "physical_qubit": 95,
+    "max_duration_us": 15.592000000000036,
+    "t1_s": 0.0002321209701044598,
+    "t2_s": 0.0003182076980178073,
+    "memory_coherence_feasible": true
+  }
+]

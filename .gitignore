@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+article/*.aux
+article/*.log
+article/*.blg
+article/*.out
+runs/

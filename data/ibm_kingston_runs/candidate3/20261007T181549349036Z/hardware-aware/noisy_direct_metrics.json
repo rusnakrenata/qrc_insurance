@@ -1,0 +1,9 @@
+{
+  "approach": "hardware-aware",
+  "shots": 0,
+  "replicate": 0,
+  "seed": 0,
+  "rmse": 5.832739653530774,
+  "mae": 4.3878745151427925,
+  "bias": -2.352966947301027
+}

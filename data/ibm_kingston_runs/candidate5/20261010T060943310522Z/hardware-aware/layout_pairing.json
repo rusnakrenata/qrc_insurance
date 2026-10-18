@@ -1,0 +1,25 @@
+{
+  "noisy_layout": [
+    95,
+    94,
+    93,
+    92,
+    79,
+    73
+  ],
+  "qpu_layout": [
+    95,
+    94,
+    93,
+    92,
+    79,
+    73
+  ],
+  "noise_sha256": "92ab9d45ce051fbba5722857b014a70e7e743edf398e278a21cf5a24f8290765",
+  "resource": {
+    "feature_vector_n_cz": 2560,
+    "max_setting_depth": 3924,
+    "max_setting_duration_us": 233.13599999998976,
+    "n_settings": 2
+  }
+}

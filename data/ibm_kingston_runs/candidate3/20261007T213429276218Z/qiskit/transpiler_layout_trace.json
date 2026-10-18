@@ -1,0 +1,619 @@
+{
+  "optimization_level": 1,
+  "seed": 42,
+  "initial_selector": "VF2Layout",
+  "selected_layout": [
+    67,
+    57,
+    47,
+    46,
+    48,
+    49
+  ],
+  "passes": [
+    {
+      "pass_name": "ContainsInstruction",
+      "seconds": 4.673004150390625e-05,
+      "layout": null,
+      "vf2_stop": "None",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "UnitarySynthesis",
+      "seconds": 1.7642974853515625e-05,
+      "layout": null,
+      "vf2_stop": "None",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "HighLevelSynthesis",
+      "seconds": 3.647804260253906e-05,
+      "layout": null,
+      "vf2_stop": "None",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "BasisTranslator",
+      "seconds": 0.0004146099090576172,
+      "layout": null,
+      "vf2_stop": "None",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "InverseCancellation",
+      "seconds": 6.556510925292969e-05,
+      "layout": null,
+      "vf2_stop": "None",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "ContractIdleWiresInControlFlow",
+      "seconds": 7.867813110351562e-06,
+      "layout": null,
+      "vf2_stop": "None",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "SetLayout",
+      "seconds": 1.0967254638671875e-05,
+      "layout": null,
+      "vf2_stop": "None",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "TrivialLayout",
+      "seconds": 0.0001747608184814453,
+      "layout": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "vf2_stop": "None",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "CheckMap",
+      "seconds": 0.00036978721618652344,
+      "layout": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "vf2_stop": "None",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "VF2Layout",
+      "seconds": 0.0034079551696777344,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "FullAncillaAllocation",
+      "seconds": 0.0016398429870605469,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "EnlargeWithAncilla",
+      "seconds": 0.0004229545593261719,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "ApplyLayout",
+      "seconds": 0.001756429672241211,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "CheckMap",
+      "seconds": 0.000240325927734375,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "FilterOpNodes",
+      "seconds": 0.00011730194091796875,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "UnitarySynthesis",
+      "seconds": 2.8848648071289062e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "HighLevelSynthesis",
+      "seconds": 6.079673767089844e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "BasisTranslator",
+      "seconds": 0.0030608177185058594,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "Size",
+      "seconds": 2.0503997802734375e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "Depth",
+      "seconds": 8.344650268554688e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "FixedPoint",
+      "seconds": 2.2411346435546875e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "FixedPoint",
+      "seconds": 1.0728836059570312e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "Optimize1qGatesDecomposition",
+      "seconds": 0.002129793167114258,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "InverseCancellation",
+      "seconds": 0.0001246929168701172,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "ContractIdleWiresInControlFlow",
+      "seconds": 7.867813110351562e-06,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "GatesInBasis",
+      "seconds": 9.393692016601562e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "Size",
+      "seconds": 1.1444091796875e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "Depth",
+      "seconds": 7.700920104980469e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "FixedPoint",
+      "seconds": 1.6689300537109375e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "FixedPoint",
+      "seconds": 1.1205673217773438e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "Optimize1qGatesDecomposition",
+      "seconds": 0.0004222393035888672,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "InverseCancellation",
+      "seconds": 0.00010180473327636719,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "ContractIdleWiresInControlFlow",
+      "seconds": 4.5299530029296875e-06,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "GatesInBasis",
+      "seconds": 5.91278076171875e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "Size",
+      "seconds": 5.9604644775390625e-06,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "Depth",
+      "seconds": 6.29425048828125e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "FixedPoint",
+      "seconds": 1.33514404296875e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "FixedPoint",
+      "seconds": 8.821487426757812e-06,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "TimeUnitConversion",
+      "seconds": 0.0008208751678466797,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "TimeUnitConversion",
+      "seconds": 0.0005307197570800781,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "ALAPScheduleAnalysis",
+      "seconds": 0.0047876834869384766,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "InstructionDurationCheck",
+      "seconds": 2.5510787963867188e-05,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    },
+    {
+      "pass_name": "PadDelay",
+      "seconds": 0.039811134338378906,
+      "layout": [
+        67,
+        57,
+        47,
+        46,
+        48,
+        49
+      ],
+      "vf2_stop": "VF2LayoutStopReason.SOLUTION_FOUND",
+      "vf2_post_stop": "None",
+      "post_layout": "None"
+    }
+  ],
+  "final_index_layout": [
+    67,
+    57,
+    47,
+    46,
+    48,
+    49
+  ]
+}

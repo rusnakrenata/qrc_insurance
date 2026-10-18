@@ -1,0 +1,838 @@
+{
+  "source_run": "C:\\Users\\rusna\\OneDrive\\Desktop\\quantum_reservoir\\results\\ibm_final\\candidate5\\20261010T060943310522Z",
+  "endpoint": 604,
+  "rows": [
+    {
+      "mode": "automatic",
+      "level": 1,
+      "setting": "XXXX",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "final_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "depth": 3861,
+      "gates": {
+        "rz": 4937,
+        "sx": 3317,
+        "delay": 1433,
+        "cz": 1280,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 232.872,
+      "seconds": 0.7773786000325345,
+      "signature": "dd2e1fd5ffd5200d5720e5ee2e90d8a62928d19809c335b346067e75af2f2f6a"
+    },
+    {
+      "mode": "automatic",
+      "level": 1,
+      "setting": "ZZZZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        25,
+        37,
+        45,
+        44,
+        46,
+        47
+      ],
+      "final_layout": [
+        25,
+        37,
+        45,
+        44,
+        46,
+        47
+      ],
+      "depth": 3861,
+      "gates": {
+        "rz": 4941,
+        "sx": 3321,
+        "delay": 1433,
+        "cz": 1280,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 232.904,
+      "seconds": 0.583965600002557,
+      "signature": "ccefd76a1aa05872730d4ec8d77ce981fd908ee1cabb0a366d1e7a4282ec73e9"
+    },
+    {
+      "mode": "automatic",
+      "level": 2,
+      "setting": "XXXX",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        25,
+        37,
+        45,
+        44,
+        46,
+        47
+      ],
+      "final_layout": [
+        25,
+        37,
+        45,
+        44,
+        46,
+        47
+      ],
+      "depth": 3092,
+      "gates": {
+        "rz": 3380,
+        "sx": 3262,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 315,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.952,
+      "seconds": 0.5607671000179835,
+      "signature": "41383b9a9605532723622b8fb755247f5bf7bab30fdd6fc0aa1e6d1572f0a67b"
+    },
+    {
+      "mode": "automatic",
+      "level": 2,
+      "setting": "ZZZZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        25,
+        37,
+        45,
+        44,
+        46,
+        47
+      ],
+      "final_layout": [
+        25,
+        37,
+        45,
+        44,
+        46,
+        47
+      ],
+      "depth": 3092,
+      "gates": {
+        "rz": 3384,
+        "sx": 3266,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 315,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.98400000000004,
+      "seconds": 0.4712900999584235,
+      "signature": "4ab112af6ba0626aa7a4911aa9232330da3112acb84f9581c842bcafaf06f289"
+    },
+    {
+      "mode": "automatic",
+      "level": 3,
+      "setting": "XXXX",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "final_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "depth": 3063,
+      "gates": {
+        "rz": 3408,
+        "sx": 3262,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 315,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.952,
+      "seconds": 0.6274680999922566,
+      "signature": "6f192073c2953f750d9c7592ec20ff929fb4ae1d452edabd73a19c69417b8ece"
+    },
+    {
+      "mode": "automatic",
+      "level": 3,
+      "setting": "ZZZZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "final_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "depth": 3063,
+      "gates": {
+        "rz": 3412,
+        "sx": 3266,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 315,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.98400000000004,
+      "seconds": 0.6866447000065818,
+      "signature": "586491e073c9610f3088acbe17dc6593d75d807ceb014f6aed17f02e4fb19f09"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 1,
+      "setting": "XXXX",
+      "selector": "fixed",
+      "initial_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "final_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "depth": 3861,
+      "gates": {
+        "rz": 4937,
+        "sx": 3317,
+        "delay": 1433,
+        "cz": 1280,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 232.872,
+      "seconds": 0.5892053000279702,
+      "signature": "c1c98d08c2cdebb8599631771a08f5bc11b4228aeb046ee5f9b351c4c046d903"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 1,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "final_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "depth": 3861,
+      "gates": {
+        "rz": 4941,
+        "sx": 3321,
+        "delay": 1433,
+        "cz": 1280,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 232.904,
+      "seconds": 0.45022370002698153,
+      "signature": "68e2339cf41b0b3cd1dba38c527b83bb3a592fd95b4c005a35f12358239515d4"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 2,
+      "setting": "XXXX",
+      "selector": "fixed",
+      "initial_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "final_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "depth": 3092,
+      "gates": {
+        "rz": 3391,
+        "sx": 3318,
+        "delay": 1433,
+        "cz": 1280,
+        "x": 261,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.952,
+      "seconds": 0.5567808999912813,
+      "signature": "90d72ba8ff0f94675b726dfb181a561b329045a8c22a2e495b7aea221ec2ba04"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 2,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "final_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "depth": 3092,
+      "gates": {
+        "rz": 3394,
+        "sx": 3321,
+        "delay": 1433,
+        "cz": 1280,
+        "x": 260,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.98400000000004,
+      "seconds": 0.9155617000069469,
+      "signature": "df7b56244e4bb76a2cc4ee2f658774d25cc63a0a51ab0bae523e87a523a70060"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 3,
+      "setting": "XXXX",
+      "selector": "fixed",
+      "initial_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "final_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "depth": 3085,
+      "gates": {
+        "rz": 3386,
+        "sx": 3318,
+        "delay": 1433,
+        "cz": 1280,
+        "x": 258,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.85600000000002,
+      "seconds": 1.228744599968195,
+      "signature": "8d29a3c7c52e31f21d4441f548cc5559da15ccadde5f04ebeaf5476f47b29615"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 3,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "final_layout": [
+        95,
+        94,
+        93,
+        92,
+        79,
+        73
+      ],
+      "depth": 3085,
+      "gates": {
+        "rz": 3389,
+        "sx": 3321,
+        "delay": 1433,
+        "cz": 1280,
+        "x": 257,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.888,
+      "seconds": 0.643929899961222,
+      "signature": "53e6201316eb45738e257da0e470159260fa50d762f1962a748f00c90cd2abbc"
+    },
+    {
+      "mode": "random",
+      "level": 1,
+      "setting": "XXXX",
+      "selector": "fixed",
+      "initial_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "final_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "depth": 3861,
+      "gates": {
+        "rz": 4937,
+        "sx": 3317,
+        "delay": 1433,
+        "cz": 1280,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 232.872,
+      "seconds": 0.47455109999282286,
+      "signature": "045ac637d076b0e6a7e3a2b3dc2f0895d693f70b268ceac830aeeffb09055102"
+    },
+    {
+      "mode": "random",
+      "level": 1,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "final_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "depth": 3861,
+      "gates": {
+        "rz": 4941,
+        "sx": 3321,
+        "delay": 1433,
+        "cz": 1280,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 232.904,
+      "seconds": 0.4033613000065088,
+      "signature": "6771e8dfc3af585e30764bb7f11749953629cbb21d3a16cb935c5371f6f422b0"
+    },
+    {
+      "mode": "random",
+      "level": 2,
+      "setting": "XXXX",
+      "selector": "fixed",
+      "initial_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "final_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "depth": 3091,
+      "gates": {
+        "rz": 3379,
+        "sx": 3262,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 313,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.92000000000002,
+      "seconds": 0.4227526999893598,
+      "signature": "4e05e384ffc627f143d42c3fd322d033a302defb0336f7896e51a0edf906ac13"
+    },
+    {
+      "mode": "random",
+      "level": 2,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "final_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "depth": 3091,
+      "gates": {
+        "rz": 3383,
+        "sx": 3266,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 313,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.952,
+      "seconds": 0.7296466000261717,
+      "signature": "43b295eecab2437a9705a5b62efa35ab9b4c9f63b9c6e2850eb607e9d1606651"
+    },
+    {
+      "mode": "random",
+      "level": 3,
+      "setting": "XXXX",
+      "selector": "fixed",
+      "initial_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "final_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "depth": 3090,
+      "gates": {
+        "rz": 3331,
+        "sx": 3262,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 313,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.92000000000002,
+      "seconds": 0.5420383000164293,
+      "signature": "6b6bf82e8b38e7cb7757f7a82a4eb72d1a587deda1cdae46d486fbf3cb6da019"
+    },
+    {
+      "mode": "random",
+      "level": 3,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "final_layout": [
+        93,
+        79,
+        73,
+        72,
+        74,
+        75
+      ],
+      "depth": 3090,
+      "gates": {
+        "rz": 3335,
+        "sx": 3266,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 313,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.952,
+      "seconds": 0.5800546000245959,
+      "signature": "f680ca037d43e3474b11fdf3a25089782e794f0cbee8c646a1edbd968d9f6cb2"
+    },
+    {
+      "mode": "qiskit",
+      "level": 1,
+      "setting": "XXXX",
+      "selector": "fixed",
+      "initial_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "final_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "depth": 3861,
+      "gates": {
+        "rz": 4937,
+        "sx": 3317,
+        "delay": 1433,
+        "cz": 1280,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 232.872,
+      "seconds": 0.4864804999670014,
+      "signature": "dd2e1fd5ffd5200d5720e5ee2e90d8a62928d19809c335b346067e75af2f2f6a"
+    },
+    {
+      "mode": "qiskit",
+      "level": 1,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "final_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "depth": 3861,
+      "gates": {
+        "rz": 4941,
+        "sx": 3321,
+        "delay": 1433,
+        "cz": 1280,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 232.904,
+      "seconds": 0.48694949998753145,
+      "signature": "d2a5ef709a7214af48861a43f759aa9272e00e4a9bf21c0591495ae890ffd117"
+    },
+    {
+      "mode": "qiskit",
+      "level": 2,
+      "setting": "XXXX",
+      "selector": "fixed",
+      "initial_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "final_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "depth": 3091,
+      "gates": {
+        "rz": 3381,
+        "sx": 3263,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 314,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.92000000000002,
+      "seconds": 0.6942306999699213,
+      "signature": "45592f696800df5853c52316922541cc164d40d32ece005749d3ca5f048c6ac4"
+    },
+    {
+      "mode": "qiskit",
+      "level": 2,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "final_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "depth": 3091,
+      "gates": {
+        "rz": 3383,
+        "sx": 3266,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 313,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.952,
+      "seconds": 0.4207627000287175,
+      "signature": "91a95c7e95c396456ad5a1f4b3ed5f06171538b8fde9f675c5a76026277d5470"
+    },
+    {
+      "mode": "qiskit",
+      "level": 3,
+      "setting": "XXXX",
+      "selector": "fixed",
+      "initial_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "final_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "depth": 3062,
+      "gates": {
+        "rz": 3367,
+        "sx": 3263,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 314,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.92000000000002,
+      "seconds": 0.5418106999713928,
+      "signature": "f6bd868cc1804c4aa8de00c13b15ac9de4de81eaa3a9d620b5aaa6416f8a93c2"
+    },
+    {
+      "mode": "qiskit",
+      "level": 3,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "final_layout": [
+        47,
+        46,
+        45,
+        44,
+        37,
+        25
+      ],
+      "depth": 3062,
+      "gates": {
+        "rz": 3369,
+        "sx": 3266,
+        "delay": 1434,
+        "cz": 1280,
+        "x": 313,
+        "reset": 252,
+        "measure": 4
+      },
+      "duration_us": 230.952,
+      "seconds": 0.5441520999884233,
+      "signature": "e49784284d3f950c97c4e3d0adc3eac929e8c008922bc8629ba24df068f3d306"
+    }
+  ]
+}

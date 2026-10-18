@@ -1,0 +1,8 @@
+check,status
+one-day horizon,PASS
+unique target dates,PASS
+consecutive days,PASS
+C_t equals previous target,PASS
+weekday belongs to target day,PASS
+no missing values,PASS
+splits chronological,PASS

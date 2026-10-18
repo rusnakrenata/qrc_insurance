@@ -1,0 +1,81 @@
+{
+ "probe_seeds": [
+  79001,
+  42,
+  101,
+  505,
+  707
+ ],
+ "delays": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  10,
+  18,
+  20,
+  25
+ ],
+ "channels": [
+  "C",
+  "D",
+  "P",
+  "H"
+ ],
+ "readout": "ridge on standardized 18 one-body Pauli expectations, alpha=1e-6, intercept",
+ "train": "endpoints in 2022-2024 (index < 1095)",
+ "evaluation": "endpoints in 2025 (365)",
+ "features": "reset-window replay with each frozen W",
+ "basis": "per channel, polynomials orthonormal on the empirical distribution of the probe training rows (Gram-Schmidt on 1, x, x^2, x^3); degrees with zero residual are skipped; the binary holiday channel H enters only linear targets",
+ "families": {
+  "linear": "phi1(u_j(t-k))",
+  "nonlinear_2": "phi2(u_j(t-k))",
+  "cross": "phi1(u_i(t-k1)) phi1(u_j(t-k2)), all pairs of (channel, delay)",
+  "nonlinear_3": "phi3(u_j(t-k))"
+ },
+ "correction": "corrected = max(raw - 1/(365-1), 0) if raw > 99th percentile of a permutation null (300 random targets, seed 2027, per candidate) else 0",
+ "n_targets": 441,
+ "frozen_candidates": {
+  "1": {
+   "graph": "H3",
+   "window": 4,
+   "r": 3,
+   "alpha": 0.25,
+   "hx": 0.777492389747048,
+   "hy": -0.293484785757933
+  },
+  "2": {
+   "graph": "H3",
+   "window": 2,
+   "r": 3,
+   "alpha": 0.25,
+   "hx": 0.777492389747048,
+   "hy": -0.293484785757933
+  },
+  "3": {
+   "graph": "H2",
+   "window": 2,
+   "r": 2,
+   "alpha": 0.75,
+   "hx": 0.490662724735852,
+   "hy": 0.397549311143186
+  },
+  "4": {
+   "graph": "H0",
+   "window": 117,
+   "r": 4,
+   "alpha": 0.75,
+   "hx": 0.580092560570867,
+   "hy": -0.694330375116467
+  },
+  "5": {
+   "graph": "H2",
+   "window": 64,
+   "r": 2,
+   "alpha": 0.75,
+   "hx": 0.490662724735852,
+   "hy": 0.397549311143186
+  }
+ }
+}

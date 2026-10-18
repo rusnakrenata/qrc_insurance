@@ -1,0 +1,37 @@
+{
+  "candidate_id": "H6_W06_r2_local_04_XZinj_plus_YX45",
+  "topology": "H6",
+  "protocol": "RWP",
+  "window": 6,
+  "r": 2,
+  "readout": "XZinj_plus_YX45",
+  "trotter_search_id": "local_04",
+  "alpha": 0.5,
+  "dt": 1.6714642617179107,
+  "hx": 0.6336725850322916,
+  "hy": -0.6558611684889465,
+  "J": {
+    "01": 0.4386571878384469,
+    "15": -0.9401355978978354,
+    "52": 0.6331119539993955,
+    "23": -0.0898643702735231,
+    "34": -0.510412472015432,
+    "40": -0.6483499867673448,
+    "45": -0.4692113089711545
+  },
+  "frozen_cv_from_final5": 3.330959558307346,
+  "identity_checks": {
+    "topology": true,
+    "window": true,
+    "r": true,
+    "readout": true,
+    "search_id": true
+  },
+  "selected_lambda_recomputed_training_only": 1.0,
+  "cv_rmse_recomputed_training_only": 3.330959558307346,
+  "cv_rmse_std_recomputed_training_only": 0.3099374362059728,
+  "n_qpu_probe_endpoints_reserved": 100,
+  "n_fake_sim_endpoints": 20,
+  "validation_2025_metric_computed": false,
+  "test_2026_loaded": false
+}

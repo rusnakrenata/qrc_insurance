@@ -1,0 +1,838 @@
+{
+  "source_run": "C:\\Users\\rusna\\OneDrive\\Desktop\\quantum_reservoir\\results\\ibm_final\\candidate3\\20261007T163937717294Z",
+  "endpoint": 575,
+  "rows": [
+    {
+      "mode": "automatic",
+      "level": 1,
+      "setting": "XXXZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "final_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "depth": 141,
+      "gates": {
+        "delay": 193,
+        "rz": 156,
+        "sx": 102,
+        "cz": 40,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.1364189000451006,
+      "signature": "b413cd65bfa91c06c895cb973c88c3683835d59fd18189448b5786e1c835d15b"
+    },
+    {
+      "mode": "automatic",
+      "level": 1,
+      "setting": "ZZZZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        47,
+        46,
+        45,
+        37,
+        44,
+        43
+      ],
+      "final_layout": [
+        47,
+        46,
+        45,
+        37,
+        44,
+        43
+      ],
+      "depth": 141,
+      "gates": {
+        "delay": 193,
+        "rz": 159,
+        "sx": 105,
+        "cz": 40,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.472,
+      "seconds": 0.04637019999790937,
+      "signature": "2aa1a4aa1a00ed397828b5d53e1af4ec822335111a4db1ea896082c99a861222"
+    },
+    {
+      "mode": "automatic",
+      "level": 2,
+      "setting": "XXXZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        47,
+        46,
+        45,
+        37,
+        44,
+        43
+      ],
+      "final_layout": [
+        47,
+        46,
+        45,
+        37,
+        44,
+        43
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 194,
+        "rz": 105,
+        "sx": 101,
+        "cz": 40,
+        "x": 11,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.06325579999247566,
+      "signature": "0d2f51bfccc6cc87b9f910f3e53363d952eadc1cd6dfefafabfa70aca2327ed6"
+    },
+    {
+      "mode": "automatic",
+      "level": 2,
+      "setting": "ZZZZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        47,
+        46,
+        45,
+        37,
+        44,
+        43
+      ],
+      "final_layout": [
+        47,
+        46,
+        45,
+        37,
+        44,
+        43
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 194,
+        "rz": 108,
+        "sx": 104,
+        "cz": 40,
+        "x": 11,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.472,
+      "seconds": 0.05925819999538362,
+      "signature": "77a124e48efe857fbb6f9f683bd7608e04f809182d3b28b5ae080074c8e8a71b"
+    },
+    {
+      "mode": "automatic",
+      "level": 3,
+      "setting": "XXXZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        123,
+        136,
+        143,
+        144,
+        142,
+        141
+      ],
+      "final_layout": [
+        123,
+        136,
+        143,
+        144,
+        142,
+        141
+      ],
+      "depth": 110,
+      "gates": {
+        "delay": 194,
+        "rz": 102,
+        "sx": 101,
+        "cz": 40,
+        "x": 10,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.408,
+      "seconds": 0.06511859997408465,
+      "signature": "2b24a8f9e844e053b00d42dc1f36dec74d14678c9814fd24d225b99644d8e76c"
+    },
+    {
+      "mode": "automatic",
+      "level": 3,
+      "setting": "ZZZZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        123,
+        136,
+        143,
+        144,
+        142,
+        141
+      ],
+      "final_layout": [
+        123,
+        136,
+        143,
+        144,
+        142,
+        141
+      ],
+      "depth": 110,
+      "gates": {
+        "delay": 194,
+        "rz": 105,
+        "sx": 104,
+        "cz": 40,
+        "x": 10,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.06501889997161925,
+      "signature": "7c209c2b8388457314368bbe9744c5291ca0be2688ab6ec7a61fe6b8f25025cf"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 1,
+      "setting": "XXXZ",
+      "selector": "fixed",
+      "initial_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "final_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "depth": 141,
+      "gates": {
+        "delay": 193,
+        "rz": 156,
+        "sx": 102,
+        "cz": 40,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.049763400049414486,
+      "signature": "048eb93fb7c859e5995872970afbdc53a86e3ec17083f4e94708d441b8de5216"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 1,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "final_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "depth": 141,
+      "gates": {
+        "delay": 193,
+        "rz": 159,
+        "sx": 105,
+        "cz": 40,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.472,
+      "seconds": 0.05880190001334995,
+      "signature": "f1e9432e0adba80dd03f6a63c9a5efcbea7a6866200176cc7a73137a66de4c6e"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 2,
+      "setting": "XXXZ",
+      "selector": "fixed",
+      "initial_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "final_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 194,
+        "rz": 102,
+        "sx": 99,
+        "cz": 40,
+        "x": 9,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.05074679997051135,
+      "signature": "a7feff60a6a2b4870b9cdb95b9e8144635972fa4e1cfff2eb99092ee2a9b8c87"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 2,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "final_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 194,
+        "rz": 105,
+        "sx": 102,
+        "cz": 40,
+        "x": 9,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.472,
+      "seconds": 0.06092230003559962,
+      "signature": "ff7a2053e22d1fd997e1e0d1546c8483cc19becb50642f428ed10e018dcc787e"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 3,
+      "setting": "XXXZ",
+      "selector": "fixed",
+      "initial_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "final_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "depth": 112,
+      "gates": {
+        "delay": 194,
+        "rz": 100,
+        "sx": 99,
+        "cz": 40,
+        "x": 9,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.06651680002687499,
+      "signature": "712930bfd020ca55164b13ecd6385fd73c313d39b5590db0799fa7cf12679811"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 3,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "final_layout": [
+        141,
+        142,
+        143,
+        144,
+        136,
+        123
+      ],
+      "depth": 112,
+      "gates": {
+        "delay": 194,
+        "rz": 103,
+        "sx": 102,
+        "cz": 40,
+        "x": 9,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.472,
+      "seconds": 0.06113719998393208,
+      "signature": "154af397fdf6aa597234d34a75039c858fa27b641d43289b4ef1700e73ef7bd5"
+    },
+    {
+      "mode": "random",
+      "level": 1,
+      "setting": "XXXZ",
+      "selector": "fixed",
+      "initial_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "final_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "depth": 141,
+      "gates": {
+        "delay": 193,
+        "rz": 156,
+        "sx": 102,
+        "cz": 40,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.049158699985127896,
+      "signature": "a0b215af59ccb035302817bfae283a8d05924f14306648c523a4fc1c65fb020e"
+    },
+    {
+      "mode": "random",
+      "level": 1,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "final_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "depth": 141,
+      "gates": {
+        "delay": 193,
+        "rz": 159,
+        "sx": 105,
+        "cz": 40,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.472,
+      "seconds": 0.07777560001704842,
+      "signature": "3870a7f258a2e715a60b9b4a4e04896c21df033946b9956f3a52125a5d9e0ff4"
+    },
+    {
+      "mode": "random",
+      "level": 2,
+      "setting": "XXXZ",
+      "selector": "fixed",
+      "initial_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "final_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 194,
+        "rz": 105,
+        "sx": 101,
+        "cz": 40,
+        "x": 11,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.05154040001798421,
+      "signature": "7c99225c2f447a467df5a60e0ab889728f5c905e2752a97de83de3d171c43816"
+    },
+    {
+      "mode": "random",
+      "level": 2,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "final_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 194,
+        "rz": 108,
+        "sx": 104,
+        "cz": 40,
+        "x": 11,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.472,
+      "seconds": 0.07383389997994527,
+      "signature": "99652889387eb32ad3050cd48cc5aaa0042e07d9a3d74f160af5e46095165830"
+    },
+    {
+      "mode": "random",
+      "level": 3,
+      "setting": "XXXZ",
+      "selector": "fixed",
+      "initial_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "final_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 194,
+        "rz": 105,
+        "sx": 101,
+        "cz": 40,
+        "x": 11,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.05483689997345209,
+      "signature": "7c99225c2f447a467df5a60e0ab889728f5c905e2752a97de83de3d171c43816"
+    },
+    {
+      "mode": "random",
+      "level": 3,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "final_layout": [
+        83,
+        84,
+        85,
+        86,
+        77,
+        65
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 194,
+        "rz": 108,
+        "sx": 104,
+        "cz": 40,
+        "x": 11,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.472,
+      "seconds": 0.06422299996484071,
+      "signature": "99652889387eb32ad3050cd48cc5aaa0042e07d9a3d74f160af5e46095165830"
+    },
+    {
+      "mode": "qiskit",
+      "level": 1,
+      "setting": "XXXZ",
+      "selector": "fixed",
+      "initial_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "final_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "depth": 141,
+      "gates": {
+        "delay": 193,
+        "rz": 156,
+        "sx": 102,
+        "cz": 40,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.046423699997831136,
+      "signature": "b413cd65bfa91c06c895cb973c88c3683835d59fd18189448b5786e1c835d15b"
+    },
+    {
+      "mode": "qiskit",
+      "level": 1,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "final_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "depth": 141,
+      "gates": {
+        "delay": 193,
+        "rz": 159,
+        "sx": 105,
+        "cz": 40,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.472,
+      "seconds": 0.059300700027961284,
+      "signature": "aedf07d327741bb2fdd085b473a15c85ca638540a61868ffb3583b2120dcc4ac"
+    },
+    {
+      "mode": "qiskit",
+      "level": 2,
+      "setting": "XXXZ",
+      "selector": "fixed",
+      "initial_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "final_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 193,
+        "rz": 107,
+        "sx": 103,
+        "cz": 40,
+        "x": 11,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.07168120000278577,
+      "signature": "e81b95d978bfbaee9fe10907b38052b43d29a22819f31003f04c2f8faa1734c3"
+    },
+    {
+      "mode": "qiskit",
+      "level": 2,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "final_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 193,
+        "rz": 109,
+        "sx": 105,
+        "cz": 40,
+        "x": 10,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.472,
+      "seconds": 0.0629524000105448,
+      "signature": "f21609e51671b1fb69ee5eaa355afb2219d60c110026ec960ab6466a4938f48b"
+    },
+    {
+      "mode": "qiskit",
+      "level": 3,
+      "setting": "XXXZ",
+      "selector": "fixed",
+      "initial_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "final_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 193,
+        "rz": 107,
+        "sx": 103,
+        "cz": 40,
+        "x": 11,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.44,
+      "seconds": 0.058843899983912706,
+      "signature": "0c520aaf3c66aaecdd5e2fac08b5da41e4fe0201c819e95f45f1e99cca83c4dd"
+    },
+    {
+      "mode": "qiskit",
+      "level": 3,
+      "setting": "ZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "final_layout": [
+        43,
+        44,
+        45,
+        37,
+        46,
+        47
+      ],
+      "depth": 114,
+      "gates": {
+        "delay": 193,
+        "rz": 107,
+        "sx": 105,
+        "cz": 40,
+        "x": 10,
+        "reset": 4,
+        "measure": 4
+      },
+      "duration_us": 7.472,
+      "seconds": 0.058795200020540506,
+      "signature": "7c9f6b9e1a1fac0cab1b3ae5fc2340643022098e9f26111e9b6cbd0e3a133718"
+    }
+  ]
+}

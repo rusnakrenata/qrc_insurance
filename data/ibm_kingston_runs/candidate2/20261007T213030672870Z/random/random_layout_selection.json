@@ -1,0 +1,18 @@
+{
+  "seed": 2632749092,
+  "layout": [
+    79,
+    73,
+    74,
+    75,
+    93,
+    94
+  ],
+  "native_embedding_count": 1072,
+  "faulty_qubits": [],
+  "rejected": [],
+  "selection": "Uniform random permutation of native embeddings; first strict-compilable mapping",
+  "optimization_level": 1,
+  "routing": "none",
+  "probe": false
+}

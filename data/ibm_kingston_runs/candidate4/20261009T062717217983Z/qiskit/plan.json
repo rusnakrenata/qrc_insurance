@@ -1,0 +1,72 @@
+{
+  "status": "READY",
+  "candidate": 4,
+  "approach": "qiskit",
+  "evaluation_year": 2026,
+  "backend": "ibm_kingston",
+  "calibration": "2026-10-09T05:57:02+00:00",
+  "calibration_policy": "record_drift",
+  "optimization_level": 1,
+  "readout": "XZinj_plus_YX45",
+  "features": [
+    "X0",
+    "X1",
+    "X2",
+    "X3",
+    "Z0",
+    "Z1",
+    "Z2",
+    "Z3",
+    "YX45"
+  ],
+  "candidate_config": {
+    "alpha": 0.75,
+    "dt": 1.6,
+    "hx": 0.580092560570867,
+    "hy": -0.694330375116467,
+    "topology": "H0",
+    "r": 4,
+    "J": {
+      "0,1": -1.6178834565099725,
+      "1,2": -0.1998267640484581,
+      "2,3": -1.6305688408636787,
+      "3,4": -0.489627102594124,
+      "4,5": 0.5392332533499583
+    },
+    "window": 117
+  },
+  "finalists": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  ],
+  "probe_shots": 256,
+  "test_shots": 2048,
+  "source_hashes": {
+    "final_noise_snapshot.py": "5a54fc0d584465afdc8256805429594c5dc95c2d1f69e56f1100e411099f0bb9",
+    "final_ibm_parallel.py": "55a0da5442646ba331bc50fd7c192dc5c29689d98388873aa2fb18453a07eaf4",
+    "final_qpu_engine.py": "7df960b42a6710fcaa9bdb766b67f2ed3f9ceb4b5d648bc607b94689862cc2c4",
+    "13_11_candidates45_chunked_qpu.py": "5fb930878517333c18ada84cbcae8cf06c87340b9d495bc0852a6ccbb70c55ba",
+    "13_13_ibm_2026_noise.py": "2aa1efa987ed011a495803465fd8b923abf86d2ba15652ed0691301dfb96eaf1",
+    "11_1H2_candidate2_qrc_aware_layout_selection.py": "52a72395ad192aefee01c212f107a032273ed8be112cfe01cdeed7e98e58d6cf",
+    "11_0A_live_embedding_reselection.py": "0f36512ba74003939c6da0a16e08866b7e885d658ab33cff0004ddd97ae970f2",
+    "10_05_rule_candidates_full_noise_RESUME_SAFE.py": "bc04df2ba605aa97813debb0a44f3cd50255ab311fce3dc961597765430c8e94",
+    "11_2_ibm_fold_local_cv.py": "0b7eb788526a87d0b166f1e8ef9b85ebdcb8f3648b1c50de7dcc44a3d0ba1ada",
+    "11_3_ibm_rescore_saved_qpu.py": "a18df9197ad8cba04c018f82d9ea6a5831cddd9f18bbda7fa0ffa49aef03840a",
+    "09_04_rwp_common.py": "3170adb58ff380a68468263e280a702d23452c1167d358026e889e887ff62190",
+    "07_02b_memory_pair_isolation.py": "194a41adbf778f51c22b29564a6466bb430a3f8ea40a1c196c5bae8ca8026734",
+    "results/03_01_preprocessed_samples.csv": "7c369e5138be436a5d75c0670df3f32537f2ededa6396cc4f4b49f816b6399bf",
+    "results/10_05_rule1_to_rule5_candidate_manifest_ENRICHED.csv": "662859fa015ae06674265c9e4e03f1ee28cbeb4b31a004fe0f7267aeee6cc4e6",
+    "results/ibm_fold_local_cv/candidate4/corrected_readout.csv": "41797e7a89c12baaa844ea0ea087fd73b255f02442e58ff516b4d8651f586bfc",
+    "results/ibm_fold_local_cv/candidate4/result.json": "3f9d61fc4562f879a2cec62a9adcaf3b8e1c25724680da8d85e39d5a711cdc73"
+  },
+  "reference_sha256": "c0dca423dafef24292c675eb83f11b15db60f64ade9e83edd8d7eed07e0c7b07",
+  "noise_sha256": "0dc30a35fd08016c7cc3ac37f2249c2689d3333d26e697562d6ddb37d9caae72",
+  "coherence_policy": "diagnostic_only",
+  "preparation_seconds": 10.458004900021479
+}

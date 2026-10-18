@@ -1,0 +1,10 @@
+{
+  "status": "COMPLETE",
+  "candidate": 5,
+  "approaches": [
+    "random",
+    "qiskit",
+    "hardware-aware"
+  ],
+  "rows": 16
+}

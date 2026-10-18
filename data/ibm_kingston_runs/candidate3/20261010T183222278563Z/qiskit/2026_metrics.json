@@ -1,0 +1,29 @@
+{
+  "candidate": 3,
+  "approach": "qiskit",
+  "n": 232,
+  "layout": [
+    25,
+    37,
+    45,
+    44,
+    46,
+    47
+  ],
+  "job_ids": [
+    "db58essvf2bc73cvi6qg"
+  ],
+  "calibration_policy": "record_drift",
+  "shots": 2048,
+  "optimization_level": 1,
+  "qpu": {
+    "rmse": 5.914661141903312,
+    "mae": 4.546717304398682,
+    "bias": -1.8210995019850211
+  },
+  "ideal": {
+    "rmse": 5.937486927172478,
+    "mae": 4.471948265780564,
+    "bias": -2.6202901431502656
+  }
+}

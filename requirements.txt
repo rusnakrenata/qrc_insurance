@@ -1,0 +1,17 @@
+# Python 3.11, 3.12 or 3.13 (64-bit). Versions used for the article.
+numpy==2.2.6
+scipy==1.17.1
+pandas==2.3.3
+matplotlib==3.10.9
+statsmodels==0.15.0
+scikit-learn==1.9.0
+threadpoolctl
+xgboost==3.4.1
+torch==2.14.0
+qiskit==2.5.2
+qiskit-aer==0.17.2
+qiskit-ibm-runtime==0.49.0
+pydantic>=2.13,<3
+
+# only for submitting the IQM probe (pipeline/11_iqm_probe.py --submit), in a separate environment:
+# qiskit-iqm

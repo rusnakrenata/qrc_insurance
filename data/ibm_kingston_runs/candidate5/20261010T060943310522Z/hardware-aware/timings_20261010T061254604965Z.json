@@ -1,0 +1,73 @@
+{
+  "events": [
+    {
+      "stage": "execute_total",
+      "started_utc": "2026-10-10T06:48:17.529622+00:00",
+      "status": "failed",
+      "elapsed_seconds": 661.6774109999533,
+      "finished_utc": "2026-10-10T06:59:19.209229+00:00"
+    },
+    {
+      "stage": "authentication",
+      "started_utc": "2026-10-10T06:48:17.647012+00:00",
+      "status": "complete",
+      "elapsed_seconds": 7.277897999971174,
+      "finished_utc": "2026-10-10T06:48:24.924934+00:00"
+    },
+    {
+      "stage": "backend_loading",
+      "started_utc": "2026-10-10T06:48:24.926794+00:00",
+      "status": "complete",
+      "elapsed_seconds": 0.4491742000100203,
+      "finished_utc": "2026-10-10T06:48:25.376002+00:00"
+    },
+    {
+      "stage": "calibration_observation",
+      "observed_utc": "2026-10-10T06:48:27.295185+00:00",
+      "expected": "2026-10-10T05:50:06+00:00",
+      "current": "2026-10-10T06:15:19+00:00",
+      "record": {
+        "last_update_date_raw": "2026-10-10 08:15:19+02:00",
+        "last_update_date_utc": "2026-10-10T06:15:19+00:00",
+        "last_update_date_local": "2026-10-10T08:15:19+02:00",
+        "timezone_note": "UTC is used for programmatic comparison; Europe/Bratislava is only the human-readable display. During CEST, local time is UTC+02:00."
+      },
+      "changed": true
+    },
+    {
+      "stage": "workload_compilation",
+      "started_utc": "2026-10-10T06:48:27.297456+00:00",
+      "status": "complete",
+      "elapsed_seconds": 166.07048799999757,
+      "finished_utc": "2026-10-10T06:51:13.367976+00:00"
+    },
+    {
+      "stage": "calibration_observation",
+      "observed_utc": "2026-10-10T06:51:29.279232+00:00",
+      "expected": "2026-10-10T05:50:06+00:00",
+      "current": "2026-10-10T06:15:19+00:00",
+      "record": {
+        "last_update_date_raw": "2026-10-10 08:15:19+02:00",
+        "last_update_date_utc": "2026-10-10T06:15:19+00:00",
+        "last_update_date_local": "2026-10-10T08:15:19+02:00",
+        "timezone_note": "UTC is used for programmatic comparison; Europe/Bratislava is only the human-readable display. During CEST, local time is UTC+02:00."
+      },
+      "changed": true
+    },
+    {
+      "stage": "job_submission",
+      "started_utc": "2026-10-10T06:51:29.294210+00:00",
+      "status": "complete",
+      "elapsed_seconds": 47.25681349996012,
+      "finished_utc": "2026-10-10T06:52:16.551057+00:00"
+    },
+    {
+      "stage": "job_wait_and_result_retrieval",
+      "started_utc": "2026-10-10T06:52:16.555964+00:00",
+      "status": "failed",
+      "elapsed_seconds": 422.63897580001503,
+      "finished_utc": "2026-10-10T06:59:19.194989+00:00"
+    }
+  ],
+  "note": "Elapsed wall seconds; nested events overlap and must not be summed. IBM job metrics separately record queue, execution and charged time."
+}

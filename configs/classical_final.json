@@ -1,0 +1,96 @@
+{
+  "baseline": {
+    "name": "seasonal_naive_7d",
+    "cv_rank": 1,
+    "rmse_2025": 6.405690962911711
+  },
+  "ridge": {
+    "feature_set": "F4",
+    "alpha": 1.0,
+    "cv_rmse": 3.6729324067793576,
+    "cv_rank": 1,
+    "rmse_2025": 4.872049773819986
+  },
+  "poisson": {
+    "feature_set": "F4",
+    "variant": "standardized_policy",
+    "cv_rmse": 3.7164804367988054,
+    "cv_std": 0.19696946506994423,
+    "cv_rank": 3,
+    "rmse_2025": 4.8793391737644125
+  },
+  "nb": {
+    "feature_set": "F4",
+    "variant": "fixed_log_policy_offset",
+    "cv_rmse": 3.6242769052987165,
+    "cv_std": 0.25415401015929395,
+    "cv_rank": 1,
+    "rmse_2025": 4.881543638070071
+  },
+  "esn": {
+    "feature_set": "F4",
+    "window_length": 7,
+    "reservoir_size": 200,
+    "requested_connectivity": 0.1,
+    "spectral_radius": 0.7,
+    "input_scaling": 0.25,
+    "leak_rate": 1.0,
+    "ridge_alpha": 1.0,
+    "cv_rmse": 3.650041391199697,
+    "cv_std": 0.2544366207571887,
+    "cv_rank": 2,
+    "rmse_2025": 4.848236545967508
+  },
+  "rnn": {
+    "feature_set": "F4",
+    "window": 1,
+    "hidden_size": 8,
+    "learning_rate": 0.001,
+    "weight_decay": 0.001,
+    "layers": 2,
+    "epochs": 141,
+    "cv_rmse": 3.5566263627028585,
+    "cv_std": 0.30362769294575703,
+    "cv_rank": 1,
+    "rmse_2025": 5.004152733609464
+  },
+  "gru": {
+    "feature_set": "F4",
+    "window": 14,
+    "hidden_size": 1,
+    "layers": 1,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "epochs": 383,
+    "cv_rmse": 3.5673997003794744,
+    "cv_std": 0.228753415247505,
+    "cv_rank": 3,
+    "rmse_2025": 4.946276850853989
+  },
+  "xgboost_squared": {
+    "feature_set": "F4",
+    "objective": "reg:squarederror",
+    "max_depth": 1,
+    "learning_rate": 0.1,
+    "min_child_weight": 10.0,
+    "reg_lambda": 1.0,
+    "n_estimators": 150,
+    "cv_rmse": 3.422053564675879,
+    "cv_std": 0.3240667461972778,
+    "cv_rank": 2,
+    "rmse_2025": 4.870542606194965
+  },
+  "xgboost_poisson": {
+    "feature_set": "F4",
+    "objective": "count:poisson",
+    "max_depth": 3,
+    "learning_rate": 0.03,
+    "min_child_weight": 10.0,
+    "reg_lambda": 10.0,
+    "n_estimators": 150,
+    "cv_rmse": 3.4584490533415133,
+    "cv_std": 0.3078019999867317,
+    "cv_rank": 1,
+    "rmse_2025": 5.07543329873079
+  }
+}

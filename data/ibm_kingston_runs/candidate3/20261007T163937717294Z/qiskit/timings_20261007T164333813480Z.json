@@ -1,0 +1,54 @@
+{
+  "events": [
+    {
+      "stage": "execute_total",
+      "started_utc": "2026-10-07T16:44:38.330995+00:00",
+      "status": "complete",
+      "elapsed_seconds": 690.811134399999,
+      "finished_utc": "2026-10-07T16:56:09.142178+00:00"
+    },
+    {
+      "stage": "authentication",
+      "started_utc": "2026-10-07T16:44:51.345455+00:00",
+      "status": "complete",
+      "elapsed_seconds": 34.191124600001785,
+      "finished_utc": "2026-10-07T16:45:25.536618+00:00"
+    },
+    {
+      "stage": "backend_loading",
+      "started_utc": "2026-10-07T16:45:25.596045+00:00",
+      "status": "complete",
+      "elapsed_seconds": 1.0236738999956287,
+      "finished_utc": "2026-10-07T16:45:26.619751+00:00"
+    },
+    {
+      "stage": "chunk_compilation",
+      "started_utc": "2026-10-07T16:45:39.728279+00:00",
+      "status": "complete",
+      "elapsed_seconds": 149.43831900000077,
+      "finished_utc": "2026-10-07T16:48:09.166611+00:00"
+    },
+    {
+      "stage": "chunk_submission",
+      "started_utc": "2026-10-07T16:48:29.140847+00:00",
+      "status": "complete",
+      "elapsed_seconds": 53.52220690000104,
+      "finished_utc": "2026-10-07T16:49:22.663091+00:00"
+    },
+    {
+      "stage": "chunk_wait_and_result",
+      "started_utc": "2026-10-07T16:49:22.759033+00:00",
+      "status": "complete",
+      "elapsed_seconds": 370.4112729000044,
+      "finished_utc": "2026-10-07T16:55:33.170345+00:00"
+    },
+    {
+      "stage": "chunk_scoring",
+      "started_utc": "2026-10-07T16:55:58.025884+00:00",
+      "status": "complete",
+      "elapsed_seconds": 6.172800000000279,
+      "finished_utc": "2026-10-07T16:56:04.198714+00:00"
+    }
+  ],
+  "note": "Elapsed wall seconds; nested events overlap and must not be summed. IBM job metrics separately record queue, execution and charged time."
+}

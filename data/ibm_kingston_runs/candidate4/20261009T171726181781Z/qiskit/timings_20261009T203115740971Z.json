@@ -1,0 +1,26 @@
+{
+  "events": [
+    {
+      "stage": "execute_total",
+      "started_utc": "2026-10-09T20:34:22.596000+00:00",
+      "status": "failed",
+      "elapsed_seconds": 49.8613760000153,
+      "finished_utc": "2026-10-09T20:35:12.457428+00:00"
+    },
+    {
+      "stage": "authentication",
+      "started_utc": "2026-10-09T20:34:33.790322+00:00",
+      "status": "complete",
+      "elapsed_seconds": 30.472943300002953,
+      "finished_utc": "2026-10-09T20:35:04.263294+00:00"
+    },
+    {
+      "stage": "backend_loading",
+      "started_utc": "2026-10-09T20:35:04.325501+00:00",
+      "status": "complete",
+      "elapsed_seconds": 0.8730699000007007,
+      "finished_utc": "2026-10-09T20:35:05.198601+00:00"
+    }
+  ],
+  "note": "Elapsed wall seconds; nested events overlap and must not be summed. IBM job metrics separately record queue, execution and charged time."
+}

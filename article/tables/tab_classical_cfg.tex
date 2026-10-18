@@ -1,0 +1,32 @@
+\begin{tabular}{@{}llcccp{11.4cm}@{}}
+\toprule
+Method & CV rank & CV & 2025 & Sel. & Configuration \\ \midrule
+Baseline & -- & -- & 6.406 & $\checkmark$ & seasonal\_naive\_7d \\
+Baseline & -- & -- & 6.666 &  & training\_mean \\
+Baseline & -- & -- & 7.118 &  & persistence \\
+Ridge & 1 & 3.673 & 4.872 & $\checkmark$ & alpha=1.0 \\
+Ridge & 2 & 3.675 & 4.872 &  & alpha=2.0 \\
+Ridge & 3 & 3.677 & 4.873 &  & alpha=3.0 \\
+Poisson & 1 & 3.619 & 4.881 &  & variant=fixed\_log\_policy\_offset; gamma=1.0 \\
+Poisson & 2 & 3.710 & 4.886 &  & variant=learned\_log\_policy; gamma=0.917 \\
+Poisson & 3 & 3.716 & 4.879 & $\checkmark$ & variant=standardized\_policy \\
+NB2 & 1 & 3.624 & 4.882 & $\checkmark$ & variant=fixed\_log\_policy\_offset; alpha\_dispersion=0.0447; gamma=1.0 \\
+NB2 & 2 & 3.715 & 4.885 &  & variant=learned\_log\_policy; alpha\_dispersion=0.0446; gamma=0.919 \\
+NB2 & 3 & 3.722 & 4.883 &  & variant=standardized\_policy; alpha\_dispersion=0.0445 \\
+ESN & 1 & 3.642 & 4.950 &  & window\_length=7; reservoir\_size=50; requested\_connectivity=0.1; spectral\_radius=0.9; input\_scaling=0.25; leak\_rate=1.0; ridge\_alpha=0.1 \\
+ESN & 2 & 3.650 & 4.848 & $\checkmark$ & window\_length=7; reservoir\_size=200; requested\_connectivity=0.1; spectral\_radius=0.7; input\_scaling=0.25; leak\_rate=1.0; ridge\_alpha=1.0 \\
+ESN & 3 & 3.650 & 4.930 &  & window\_length=14; reservoir\_size=100; requested\_connectivity=0.5; spectral\_radius=0.9; input\_scaling=0.25; leak\_rate=1.0; ridge\_alpha=1.0 \\
+RNN & 1 & 3.557 & 5.004 & $\checkmark$ & window=1; hidden\_size=8; layers=2; learning\_rate=0.001; weight\_decay=0.001; epochs=141 \\
+RNN & 2 & 3.557 & 5.035 &  & window=1; hidden\_size=8; layers=2; learning\_rate=0.001; weight\_decay=1e-05; epochs=138 \\
+RNN & 3 & 3.557 & 5.032 &  & window=1; hidden\_size=8; layers=2; learning\_rate=0.001; weight\_decay=0.0001; epochs=138 \\
+GRU & 1 & 3.451 & 5.021 &  & window=1; hidden\_size=1; layers=1; learning\_rate=0.001; weight\_decay=0.0001; epochs=708 \\
+GRU & 2 & 3.529 & 5.231 &  & window=2; hidden\_size=1; layers=1; learning\_rate=0.001; weight\_decay=0.0001; epochs=891 \\
+GRU & 3 & 3.567 & 4.946 & $\checkmark$ & window=14; hidden\_size=1; layers=1; learning\_rate=0.001; weight\_decay=0.0001; epochs=383 \\
+XGB squared & 1 & 3.420 & 4.901 &  & max\_depth=1; learning\_rate=0.1; min\_child\_weight=10.0; reg\_lambda=10.0; n\_estimators=150 \\
+XGB squared & 2 & 3.422 & 4.871 & $\checkmark$ & max\_depth=1; learning\_rate=0.1; min\_child\_weight=10.0; reg\_lambda=1.0; n\_estimators=150 \\
+XGB squared & 3 & 3.424 & 4.912 &  & max\_depth=1; learning\_rate=0.03; min\_child\_weight=10.0; reg\_lambda=1.0; n\_estimators=400 \\
+XGB Poisson & 1 & 3.458 & 5.075 & $\checkmark$ & max\_depth=3; learning\_rate=0.03; min\_child\_weight=10.0; reg\_lambda=10.0; n\_estimators=150 \\
+XGB Poisson & 2 & 3.461 & 5.347 &  & max\_depth=2; learning\_rate=0.03; min\_child\_weight=1.0; reg\_lambda=10.0; n\_estimators=150 \\
+XGB Poisson & 3 & 3.461 & 5.347 &  & max\_depth=2; learning\_rate=0.03; min\_child\_weight=10.0; reg\_lambda=10.0; n\_estimators=150 \\
+\bottomrule
+\end{tabular}

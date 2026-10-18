@@ -1,0 +1,129 @@
+{
+  "events": [
+    {
+      "stage": "execute_total",
+      "started_utc": "2026-10-07T21:04:10.656001+00:00",
+      "status": "complete",
+      "elapsed_seconds": 208.2000887999966,
+      "finished_utc": "2026-10-07T21:07:38.856178+00:00"
+    },
+    {
+      "stage": "authentication",
+      "started_utc": "2026-10-07T21:04:10.768652+00:00",
+      "status": "complete",
+      "elapsed_seconds": 9.540786599995045,
+      "finished_utc": "2026-10-07T21:04:20.309468+00:00"
+    },
+    {
+      "stage": "backend_loading",
+      "started_utc": "2026-10-07T21:04:20.311155+00:00",
+      "status": "complete",
+      "elapsed_seconds": 0.6479561000014655,
+      "finished_utc": "2026-10-07T21:04:20.959160+00:00"
+    },
+    {
+      "stage": "calibration_observation",
+      "observed_utc": "2026-10-07T21:04:22.822540+00:00",
+      "expected": "2026-10-07T20:07:20+00:00",
+      "current": "2026-10-07T20:48:00+00:00",
+      "record": {
+        "last_update_date_raw": "2026-10-07 22:48:00+02:00",
+        "last_update_date_utc": "2026-10-07T20:48:00+00:00",
+        "last_update_date_local": "2026-10-07T22:48:00+02:00",
+        "timezone_note": "UTC is used for programmatic comparison; Europe/Bratislava is only the human-readable display. During CEST, local time is UTC+02:00."
+      },
+      "changed": true
+    },
+    {
+      "stage": "workload_compilation",
+      "started_utc": "2026-10-07T21:04:22.824904+00:00",
+      "status": "complete",
+      "elapsed_seconds": 37.20671360000415,
+      "finished_utc": "2026-10-07T21:05:00.031662+00:00"
+    },
+    {
+      "stage": "calibration_observation",
+      "observed_utc": "2026-10-07T21:05:04.559178+00:00",
+      "expected": "2026-10-07T20:07:20+00:00",
+      "current": "2026-10-07T20:48:00+00:00",
+      "record": {
+        "last_update_date_raw": "2026-10-07 22:48:00+02:00",
+        "last_update_date_utc": "2026-10-07T20:48:00+00:00",
+        "last_update_date_local": "2026-10-07T22:48:00+02:00",
+        "timezone_note": "UTC is used for programmatic comparison; Europe/Bratislava is only the human-readable display. During CEST, local time is UTC+02:00."
+      },
+      "changed": true
+    },
+    {
+      "stage": "job_submission",
+      "started_utc": "2026-10-07T21:05:04.564952+00:00",
+      "status": "complete",
+      "elapsed_seconds": 10.254202299998724,
+      "finished_utc": "2026-10-07T21:05:14.819186+00:00"
+    },
+    {
+      "stage": "job_wait_and_result_retrieval",
+      "started_utc": "2026-10-07T21:05:14.824849+00:00",
+      "status": "complete",
+      "elapsed_seconds": 139.9380375999972,
+      "finished_utc": "2026-10-07T21:07:34.762919+00:00"
+    },
+    {
+      "stage": "feature_extraction_and_scoring",
+      "started_utc": "2026-10-07T21:07:38.483859+00:00",
+      "status": "complete",
+      "elapsed_seconds": 0.34213059999456163,
+      "finished_utc": "2026-10-07T21:07:38.826023+00:00"
+    },
+    {
+      "stage": "execute_total",
+      "started_utc": "2026-10-07T21:07:39.215618+00:00",
+      "status": "complete",
+      "elapsed_seconds": 923.0011570000061,
+      "finished_utc": "2026-10-07T21:23:02.216823+00:00"
+    },
+    {
+      "stage": "authentication",
+      "started_utc": "2026-10-07T21:07:42.928452+00:00",
+      "status": "complete",
+      "elapsed_seconds": 29.524067999998806,
+      "finished_utc": "2026-10-07T21:08:12.452568+00:00"
+    },
+    {
+      "stage": "backend_loading",
+      "started_utc": "2026-10-07T21:08:12.507181+00:00",
+      "status": "complete",
+      "elapsed_seconds": 0.9564504000009038,
+      "finished_utc": "2026-10-07T21:08:13.463661+00:00"
+    },
+    {
+      "stage": "chunk_compilation",
+      "started_utc": "2026-10-07T21:08:26.852585+00:00",
+      "status": "complete",
+      "elapsed_seconds": 265.4027023000017,
+      "finished_utc": "2026-10-07T21:12:52.255297+00:00"
+    },
+    {
+      "stage": "chunk_submission",
+      "started_utc": "2026-10-07T21:13:14.638821+00:00",
+      "status": "complete",
+      "elapsed_seconds": 77.97331499999564,
+      "finished_utc": "2026-10-07T21:14:32.612172+00:00"
+    },
+    {
+      "stage": "chunk_wait_and_result",
+      "started_utc": "2026-10-07T21:14:32.838618+00:00",
+      "status": "complete",
+      "elapsed_seconds": 470.421459600002,
+      "finished_utc": "2026-10-07T21:22:23.260108+00:00"
+    },
+    {
+      "stage": "chunk_scoring",
+      "started_utc": "2026-10-07T21:22:49.671765+00:00",
+      "status": "complete",
+      "elapsed_seconds": 6.457454199997301,
+      "finished_utc": "2026-10-07T21:22:56.129253+00:00"
+    }
+  ],
+  "note": "Elapsed wall seconds; nested events overlap and must not be summed. IBM job metrics separately record queue, execution and charged time."
+}

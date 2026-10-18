@@ -1,0 +1,838 @@
+{
+  "source_run": "C:\\Users\\rusna\\OneDrive\\Desktop\\quantum_reservoir\\results\\ibm_final\\candidate1\\20261007T111243898295Z",
+  "endpoint": 576,
+  "rows": [
+    {
+      "mode": "automatic",
+      "level": 1,
+      "setting": "XXXZYX",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "final_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "depth": 302,
+      "gates": {
+        "rz": 443,
+        "sx": 281,
+        "delay": 269,
+        "cz": 120,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.808000000000035,
+      "seconds": 0.3696358000161126,
+      "signature": "3bf3d5c3283082e5fb88a81573e73cf786f7c77013d4a0979d46caaa9185bf6b"
+    },
+    {
+      "mode": "automatic",
+      "level": 1,
+      "setting": "ZZZZZZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "final_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "depth": 302,
+      "gates": {
+        "rz": 446,
+        "sx": 284,
+        "delay": 269,
+        "cz": 120,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.808000000000035,
+      "seconds": 0.12152340001193807,
+      "signature": "537925d5d51135d7ccb4a13e229c30e5632a66ee91423262a91dec33924c9e18"
+    },
+    {
+      "mode": "automatic",
+      "level": 2,
+      "setting": "XXXZYX",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "final_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "depth": 243,
+      "gates": {
+        "rz": 291,
+        "sx": 285,
+        "delay": 269,
+        "cz": 120,
+        "x": 19,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.808000000000035,
+      "seconds": 0.2002006999682635,
+      "signature": "5b214346d895c6a35e9007525e334f7b3faa29159dbb4d2a9375ff2f12add289"
+    },
+    {
+      "mode": "automatic",
+      "level": 2,
+      "setting": "ZZZZZZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "final_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "depth": 243,
+      "gates": {
+        "rz": 295,
+        "sx": 288,
+        "delay": 269,
+        "cz": 120,
+        "x": 16,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.808000000000035,
+      "seconds": 0.14864020003005862,
+      "signature": "7e7a33f061a1ff94163b02fd38ca8148c517743d6ef3d9cbc88cfa24833307cd"
+    },
+    {
+      "mode": "automatic",
+      "level": 3,
+      "setting": "XXXZYX",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        75,
+        74,
+        73,
+        79,
+        59,
+        55
+      ],
+      "final_layout": [
+        75,
+        74,
+        73,
+        79,
+        59,
+        55
+      ],
+      "depth": 242,
+      "gates": {
+        "rz": 291,
+        "sx": 285,
+        "delay": 266,
+        "cz": 120,
+        "x": 19,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.1491511999629438,
+      "signature": "77b6fd129dd15230113e99397a1974e857b0f730d986d5a9604c51fb9c62fefa"
+    },
+    {
+      "mode": "automatic",
+      "level": 3,
+      "setting": "ZZZZZZ",
+      "selector": "VF2Layout",
+      "initial_layout": [
+        75,
+        74,
+        73,
+        79,
+        59,
+        55
+      ],
+      "final_layout": [
+        75,
+        74,
+        73,
+        79,
+        59,
+        55
+      ],
+      "depth": 243,
+      "gates": {
+        "rz": 295,
+        "sx": 288,
+        "delay": 269,
+        "cz": 120,
+        "x": 16,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.1766788000240922,
+      "signature": "b3730e94546681fdfd63a101460fe2fe923943d4a5d207859ce4693a0ca1c66f"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 1,
+      "setting": "XXXZYX",
+      "selector": "fixed",
+      "initial_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "final_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "depth": 302,
+      "gates": {
+        "rz": 443,
+        "sx": 281,
+        "delay": 269,
+        "cz": 120,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.32427079998888075,
+      "signature": "3b46854e9712b4ea4479226d6a2be2d1720f8b31e1627a6a9eaf2650b41f1429"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 1,
+      "setting": "ZZZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "final_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "depth": 302,
+      "gates": {
+        "rz": 446,
+        "sx": 284,
+        "delay": 269,
+        "cz": 120,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.10833800002001226,
+      "signature": "1a4b21cdab13a61df9c9afe4748ecf8fdf281e433de30c23ea0a0eaccdb10594"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 2,
+      "setting": "XXXZYX",
+      "selector": "fixed",
+      "initial_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "final_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "depth": 242,
+      "gates": {
+        "rz": 289,
+        "sx": 285,
+        "delay": 266,
+        "cz": 120,
+        "x": 21,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.15772100002504885,
+      "signature": "3a444e29ac2407103e92f3d1d01496ce9a500628d2c12dfb5a0fc1be500823fd"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 2,
+      "setting": "ZZZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "final_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "depth": 243,
+      "gates": {
+        "rz": 295,
+        "sx": 288,
+        "delay": 269,
+        "cz": 120,
+        "x": 16,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.13494909997098148,
+      "signature": "31fc1dfc35e8e5e6e8132a7963648c39ab8ddbbb9c8e4a1a1fa851d0c996951b"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 3,
+      "setting": "XXXZYX",
+      "selector": "fixed",
+      "initial_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "final_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "depth": 242,
+      "gates": {
+        "rz": 290,
+        "sx": 285,
+        "delay": 269,
+        "cz": 120,
+        "x": 20,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.13925670000026003,
+      "signature": "8fabf94ff84dc80d25b71969e82141adbbe1ffc18dedef4f88953d4560abb90b"
+    },
+    {
+      "mode": "hardware-aware",
+      "level": 3,
+      "setting": "ZZZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "final_layout": [
+        74,
+        73,
+        79,
+        93,
+        75,
+        59
+      ],
+      "depth": 243,
+      "gates": {
+        "rz": 295,
+        "sx": 288,
+        "delay": 269,
+        "cz": 120,
+        "x": 16,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.16392940003424883,
+      "signature": "31fc1dfc35e8e5e6e8132a7963648c39ab8ddbbb9c8e4a1a1fa851d0c996951b"
+    },
+    {
+      "mode": "random",
+      "level": 1,
+      "setting": "XXXZYX",
+      "selector": "fixed",
+      "initial_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "final_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "depth": 302,
+      "gates": {
+        "rz": 443,
+        "sx": 281,
+        "delay": 269,
+        "cz": 120,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.06925499998033047,
+      "signature": "cae79f02191b5b70eec494d66daf5df68cbb92c6cbcbd0bd708180acd497ea76"
+    },
+    {
+      "mode": "random",
+      "level": 1,
+      "setting": "ZZZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "final_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "depth": 302,
+      "gates": {
+        "rz": 446,
+        "sx": 284,
+        "delay": 269,
+        "cz": 120,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.09783500002231449,
+      "signature": "dc74386c4ea23b482e87ca77e6ef133510dd6e684e2e35ca1f926651dc572f72"
+    },
+    {
+      "mode": "random",
+      "level": 2,
+      "setting": "XXXZYX",
+      "selector": "fixed",
+      "initial_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "final_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "depth": 242,
+      "gates": {
+        "rz": 289,
+        "sx": 285,
+        "delay": 266,
+        "cz": 120,
+        "x": 21,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.10890490002930164,
+      "signature": "339b6b37b37df9681e7c73506e8acf226852e7a85822b6276bea7ac4eb33ce25"
+    },
+    {
+      "mode": "random",
+      "level": 2,
+      "setting": "ZZZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "final_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "depth": 243,
+      "gates": {
+        "rz": 295,
+        "sx": 288,
+        "delay": 269,
+        "cz": 120,
+        "x": 16,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.07312099996488541,
+      "signature": "de4431dcf4d79f1a5d1b2643538f70cc269ddc13c3a567bc5d2688c1ee57dd5f"
+    },
+    {
+      "mode": "random",
+      "level": 3,
+      "setting": "XXXZYX",
+      "selector": "fixed",
+      "initial_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "final_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "depth": 241,
+      "gates": {
+        "rz": 287,
+        "sx": 285,
+        "delay": 269,
+        "cz": 120,
+        "x": 18,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.06402200000593439,
+      "signature": "430d29fefdf2b10126d0eeac7c49fba5310d2aa04e2b5a36a751f6421c60a2fa"
+    },
+    {
+      "mode": "random",
+      "level": 3,
+      "setting": "ZZZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "final_layout": [
+        87,
+        86,
+        85,
+        84,
+        88,
+        89
+      ],
+      "depth": 241,
+      "gates": {
+        "rz": 290,
+        "sx": 288,
+        "delay": 269,
+        "cz": 120,
+        "x": 16,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.592000000000036,
+      "seconds": 0.07111690001329407,
+      "signature": "1d754b4bcd7cc37efd2da487aedf184cdc4b89b72b51f50b2a7c94d4bb631b2c"
+    },
+    {
+      "mode": "qiskit",
+      "level": 1,
+      "setting": "XXXZYX",
+      "selector": "fixed",
+      "initial_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "final_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "depth": 302,
+      "gates": {
+        "rz": 443,
+        "sx": 281,
+        "delay": 269,
+        "cz": 120,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.808000000000035,
+      "seconds": 0.05547620001016185,
+      "signature": "3bf3d5c3283082e5fb88a81573e73cf786f7c77013d4a0979d46caaa9185bf6b"
+    },
+    {
+      "mode": "qiskit",
+      "level": 1,
+      "setting": "ZZZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "final_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "depth": 302,
+      "gates": {
+        "rz": 446,
+        "sx": 284,
+        "delay": 269,
+        "cz": 120,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.808000000000035,
+      "seconds": 0.06093859998509288,
+      "signature": "537925d5d51135d7ccb4a13e229c30e5632a66ee91423262a91dec33924c9e18"
+    },
+    {
+      "mode": "qiskit",
+      "level": 2,
+      "setting": "XXXZYX",
+      "selector": "fixed",
+      "initial_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "final_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "depth": 243,
+      "gates": {
+        "rz": 291,
+        "sx": 285,
+        "delay": 269,
+        "cz": 120,
+        "x": 19,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.808000000000035,
+      "seconds": 0.052775499993003905,
+      "signature": "5b214346d895c6a35e9007525e334f7b3faa29159dbb4d2a9375ff2f12add289"
+    },
+    {
+      "mode": "qiskit",
+      "level": 2,
+      "setting": "ZZZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "final_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "depth": 243,
+      "gates": {
+        "rz": 295,
+        "sx": 288,
+        "delay": 269,
+        "cz": 120,
+        "x": 16,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.808000000000035,
+      "seconds": 0.04941400000825524,
+      "signature": "7e7a33f061a1ff94163b02fd38ca8148c517743d6ef3d9cbc88cfa24833307cd"
+    },
+    {
+      "mode": "qiskit",
+      "level": 3,
+      "setting": "XXXZYX",
+      "selector": "fixed",
+      "initial_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "final_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "depth": 243,
+      "gates": {
+        "rz": 291,
+        "sx": 285,
+        "delay": 269,
+        "cz": 120,
+        "x": 19,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.808000000000035,
+      "seconds": 0.047535300021991134,
+      "signature": "5b214346d895c6a35e9007525e334f7b3faa29159dbb4d2a9375ff2f12add289"
+    },
+    {
+      "mode": "qiskit",
+      "level": 3,
+      "setting": "ZZZZZZ",
+      "selector": "fixed",
+      "initial_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "final_layout": [
+        150,
+        149,
+        148,
+        147,
+        151,
+        138
+      ],
+      "depth": 243,
+      "gates": {
+        "rz": 295,
+        "sx": 288,
+        "delay": 269,
+        "cz": 120,
+        "x": 16,
+        "reset": 12,
+        "measure": 6
+      },
+      "duration_us": 15.808000000000035,
+      "seconds": 0.04931269999360666,
+      "signature": "7e7a33f061a1ff94163b02fd38ca8148c517743d6ef3d9cbc88cfa24833307cd"
+    }
+  ]
+}

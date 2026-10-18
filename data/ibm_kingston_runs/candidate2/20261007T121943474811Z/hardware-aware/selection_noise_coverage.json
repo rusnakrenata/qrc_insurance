@@ -1,0 +1,26 @@
+[
+  {
+    "layout": [
+      74,
+      75,
+      59,
+      55,
+      73,
+      72
+    ],
+    "required_cz_edges": 5,
+    "covered": true
+  },
+  {
+    "layout": [
+      79,
+      93,
+      94,
+      95,
+      73,
+      74
+    ],
+    "required_cz_edges": 5,
+    "covered": true
+  }
+]

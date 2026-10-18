@@ -1,0 +1,48 @@
+{
+  "poisson": [
+    {
+      "family": "poisson",
+      "feature_set": "F4",
+      "variant": "fixed_log_policy_offset",
+      "cv_rmse": 3.6185733046476414,
+      "cv_std": 0.2549689561866563
+    },
+    {
+      "family": "poisson",
+      "feature_set": "F4",
+      "variant": "learned_log_policy",
+      "cv_rmse": 3.7099678098588313,
+      "cv_std": 0.20715617673029194
+    },
+    {
+      "family": "poisson",
+      "feature_set": "F4",
+      "variant": "standardized_policy",
+      "cv_rmse": 3.7164804367988054,
+      "cv_std": 0.19696946506994423
+    }
+  ],
+  "nb": [
+    {
+      "family": "nb",
+      "feature_set": "F4",
+      "variant": "fixed_log_policy_offset",
+      "cv_rmse": 3.6242769052987165,
+      "cv_std": 0.25415401015929395
+    },
+    {
+      "family": "nb",
+      "feature_set": "F4",
+      "variant": "learned_log_policy",
+      "cv_rmse": 3.7147559763273947,
+      "cv_std": 0.20672542842826633
+    },
+    {
+      "family": "nb",
+      "feature_set": "F4",
+      "variant": "standardized_policy",
+      "cv_rmse": 3.721635455774071,
+      "cv_std": 0.19680489822401917
+    }
+  ]
+}

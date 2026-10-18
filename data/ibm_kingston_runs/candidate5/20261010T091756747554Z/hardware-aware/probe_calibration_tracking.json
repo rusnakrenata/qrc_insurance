@@ -1,0 +1,17 @@
+{
+  "selection": "2026-10-10T07:47:17+00:00",
+  "execution": {
+    "last_update_date_raw": "2026-10-10 11:15:43+02:00",
+    "last_update_date_utc": "2026-10-10T09:15:43+00:00",
+    "last_update_date_local": "2026-10-10T11:15:43+02:00",
+    "timezone_note": "UTC is used for programmatic comparison; Europe/Bratislava is only the human-readable display. During CEST, local time is UTC+02:00.",
+    "query_utc": "2026-10-10T09:56:57.277208+00:00"
+  },
+  "after": {
+    "last_update_date_raw": "2026-10-10 11:15:43+02:00",
+    "last_update_date_utc": "2026-10-10T09:15:43+00:00",
+    "last_update_date_local": "2026-10-10T11:15:43+02:00",
+    "timezone_note": "UTC is used for programmatic comparison; Europe/Bratislava is only the human-readable display. During CEST, local time is UTC+02:00."
+  },
+  "changed": true
+}

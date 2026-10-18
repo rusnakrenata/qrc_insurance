@@ -1,0 +1,29 @@
+{
+  "candidate": 3,
+  "approach": "random",
+  "n": 232,
+  "layout": [
+    71,
+    58,
+    51,
+    50,
+    52,
+    53
+  ],
+  "job_ids": [
+    "db3u9vqmb58s7388d32g"
+  ],
+  "calibration_policy": "record_drift",
+  "shots": 2048,
+  "optimization_level": 1,
+  "qpu": {
+    "rmse": 5.920204296243848,
+    "mae": 4.513163404309676,
+    "bias": -2.015472116558966
+  },
+  "ideal": {
+    "rmse": 5.937486927172478,
+    "mae": 4.471948265780564,
+    "bias": -2.6202901431502656
+  }
+}

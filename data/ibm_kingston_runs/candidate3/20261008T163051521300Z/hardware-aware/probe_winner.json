@@ -1,0 +1,13 @@
+{
+  "layout": [
+    93,
+    79,
+    73,
+    74,
+    72,
+    71
+  ],
+  "calibration": "2026-10-08T15:13:56+00:00",
+  "metric": "RMS QPU prediction minus ideal prediction on 100 training inputs",
+  "job_id": "db3sd64vf2bc73ctnnbg"
+}

@@ -1,0 +1,2 @@
+backend,operational,pending_jobs,num_qubits,current_cz_directed_edge_count,faulty_qubit_count,complete_calibration_qubit_count,eligible_qubit_count,native_embedding_count,properties_last_update
+ibm_kingston,True,1,156,352,0,155,155,258,2026-10-07T17:38:35+02:00
