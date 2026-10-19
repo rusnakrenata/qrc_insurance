@@ -78,9 +78,12 @@ def rule_r2(t):
 
 
 def rule_r3(t):
+    """Shot-resolvable set -> lowest CV; the diagonal forecast shot-SD proxy only breaks ties.
+    Without a resolvable candidate: worst shot-to-training-SD ratio -> proxy -> CV.
+    Same hierarchy as the original selection (select_hardware_aware_row)."""
     ok = t[t.all_resolvable]
     if len(ok):
-        return ok.sort_values(["forecast_shot_sd_1024", "cv_rmse"]).iloc[0]
+        return ok.sort_values(["cv_rmse", "forecast_shot_sd_1024", "settings", "cz_per_feature_vector"]).iloc[0]
     return t.sort_values(["max_shot_to_train_sd", "forecast_shot_sd_1024", "cv_rmse"]).iloc[0]
 
 
