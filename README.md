@@ -186,4 +186,4 @@ MIT, see `LICENSE`. If you use this code or data, please cite the article above.
 
 ## Conset to Publish Data
 
-The original issuer data are available in the data/raw/wrc_daily_dataset.csv
+The original issuer data are available in the data/raw/qrc_daily_dataset.csv
