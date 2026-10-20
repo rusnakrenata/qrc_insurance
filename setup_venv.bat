@@ -25,5 +25,9 @@ if not exist "C:\venvs" mkdir "C:\venvs"
 "%VENV%\Scripts\python.exe" -m pip install -r "%REPO%\requirements.txt" || (echo pip install failed. & pause & exit /b 1)
 
 echo.
-echo Done. Activate with:  %VENV%\Scripts\activate
+echo Done. Activate in PowerShell with:
+echo ^& "%VENV%\Scripts\Activate.ps1"
+echo.
+echo Or activate in Command Prompt with:
+echo "%VENV%\Scripts\activate.bat"
 pause

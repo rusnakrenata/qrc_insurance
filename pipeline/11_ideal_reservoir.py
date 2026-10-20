@@ -1,6 +1,6 @@
 """Noiseless features, readouts and forecasts of the five candidates.
 
-  python pipeline/12_ideal_reservoir.py
+  python pipeline/11_ideal_reservoir.py
 
 Writes results/ideal/.
 """

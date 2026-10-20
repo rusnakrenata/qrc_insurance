@@ -7,6 +7,8 @@ Writes results/eda/*.csv and figures/eda_target.png.
 import argparse
 import os
 import sys
+import matplotlib
+import matplotlib.pyplot as plt
 
 import numpy as np
 import pandas as pd
@@ -17,7 +19,7 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, ".."))
-from qrc.candidates import load_data  # noqa: E402
+from classical import models as M  # noqa: E402
 
 OUT = os.path.join(HERE, "..", "results", "eda")
 FIG = os.path.join(HERE, "..", "figures")
@@ -32,7 +34,7 @@ def save(df, name):
     df.to_csv(os.path.join(OUT, name), index=False)
     print(f"\n{name}\n{df.round(4).to_string(index=False)}")
 
-
+# ordinary least squares regression with a constant, given a target and one or more blocks of covariates
 def ols(y, *blocks):
     X = sm.add_constant(pd.concat(blocks, axis=1), has_constant="add")
     return sm.OLS(y, X).fit()
@@ -82,7 +84,6 @@ def r2_gain_permutation(y, base, extra, strata, n_perm, seed):
 
 def feature_set_gate(df):
     """2025 RMSE of Ridge (CV-chosen penalty), Poisson and NB2 GLMs on F2, F3, F4 (exposure as standardized covariate)."""
-    from classical import models as M
     tr, va = df.iloc[:1095], df.iloc[1095:1460]
     alphas = [1, 2, 3, 5, 6, 6.25, 6.5, 6.6, 6.75, 7, 7.5, 8, 9, 10, 15, 20, 25, 30, 50, 75, 100]
     rows = []
@@ -118,9 +119,7 @@ def relevance(tr):
 
 
 def main():
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
+    matplotlib.use("Agg") 
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--raw", default=os.path.join(HERE, "..", "data", "raw", "qrc_daily_dataset.csv"))
     ap.add_argument("--permutations", type=int, default=10000)
@@ -129,7 +128,10 @@ def main():
     os.makedirs(FIG, exist_ok=True)
     if os.path.exists(args.raw):
         save(screen_raw(args.raw), "raw_column_screening.csv")
-    df = load_data()
+    path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "..", "data", "daily_claims.csv")
+    df = pd.read_csv(path, parse_dates=["input_date", "target_date"])
     tr = df.iloc[:1095].reset_index(drop=True)
     y = tr[Y].astype(float)
     save(audit(df), "leakage_audit.csv")

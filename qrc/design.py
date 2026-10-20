@@ -12,7 +12,7 @@ ONE_BODY = [f"{p}{q}" for p in "XYZ" for q in range(6)]
 
 
 def probe(theta):
-    """Permute every input channel independently: same marginals, no temporal structure."""
+    """Permute every input sequence = channel independently: same marginals, no temporal structure."""
     rng = np.random.default_rng(PROBE_SEED)
     out = np.empty_like(theta)
     for ch in range(theta.shape[1]):
@@ -108,7 +108,9 @@ class Reservoir:
         return _reduce(np.kron, [_P[paulis.get(q, "I")] for q in range(self.n)])
 
     def maps(self, theta, names):
-        """S (T, DM^2, DM^2) and F (T, n_features, DM^2) for every input row."""
+        """S (T, DM^2, DM^2) and F (T, n_features, DM^2) for every input row.
+        S_t: state of the memory register and F_t: expectation value of observables.
+        both are just fucntion and are used to simplify the calculations (we do not need to perfrom matrix operations)"""
         obs = []
         for name in names:                                  # 'X3', 'Z5' or two-body like 'YX45'
             ps, qs = (name[:1], name[1:]) if len(name) == 2 else (name[:2], name[2:])

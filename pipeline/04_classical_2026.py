@@ -16,11 +16,11 @@ import sys
 
 import numpy as np
 import pandas as pd
+from threadpoolctl import threadpool_limits
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, ".."))
-from classical import models as M  # noqa: E402
-from qrc.candidates import load_data  # noqa: E402
+from classical import models as M 
 
 RES = os.path.join(HERE, "..", "results")
 FROZEN = os.path.join(HERE, "..", "configs", "classical_selected.json")
@@ -115,12 +115,15 @@ def main():
     ap.add_argument("--methods", default="all")
     ap.add_argument("--compare", help="folder with reference 2026 predictions")
     args = ap.parse_args()
-    from threadpoolctl import threadpool_limits
+
     methods = METHODS if args.methods == "all" else args.methods.split(",")
     vdir = os.path.join(RES, "classical_validation")
     os.makedirs(vdir, exist_ok=True)
     os.makedirs(os.path.join(RES, "classical"), exist_ok=True)
-    data = load_data()
+    path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "..", "data", "daily_claims.csv")
+    data = pd.read_csv(path, parse_dates=["input_date", "target_date"])
     with threadpool_limits(limits=1):
         runs, summary, final = validate(methods, data)
         runs.to_csv(os.path.join(vdir, "validation_runs.csv"), index=False)

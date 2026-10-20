@@ -13,11 +13,12 @@ import sys
 
 import numpy as np
 import pandas as pd
+from threadpoolctl import threadpool_limits
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, ".."))
-from classical import models as M  # noqa: E402
-from qrc.candidates import load_data  # noqa: E402
+from classical import models as M  
+
 
 OUT = os.path.join(HERE, "..", "results", "classical_search")
 FROZEN = os.path.join(HERE, "..", "configs", "classical_selected.json")
@@ -156,14 +157,17 @@ def main():
     ap.add_argument("--verify", action="store_true")
     args = ap.parse_args()
     os.makedirs(OUT, exist_ok=True)
-    from threadpoolctl import threadpool_limits
+
     try:
         import torch
         torch.set_num_threads(1)
         torch.use_deterministic_algorithms(True)
     except ImportError:
         pass
-    data = load_data().iloc[:1460].reset_index(drop=True)        # 2026 is not loaded at all
+    path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "..", "data", "daily_claims.csv")
+    data = pd.read_csv(path, parse_dates=["input_date", "target_date"]).iloc[:1460].reset_index(drop=True)  # 2026 is not loaded at all
     with threadpool_limits(limits=1):
         if args.verify:
             verify(data)

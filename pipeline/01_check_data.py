@@ -3,14 +3,17 @@
   python pipeline/01_check_data.py
 """
 import os
-import sys
 
 import numpy as np
+import pandas as pd
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from qrc.candidates import load_data  # noqa: E402
+path = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "..", "data", "daily_claims.csv"
+)
+df = pd.read_csv(path, parse_dates=["input_date", "target_date"])
 
-df = load_data()
+
 C, Y = "property_damage_claim_count_t", "target_property_damage_claim_count"
 
 # consecutive days, and the target of day t is the claim count of day t+1

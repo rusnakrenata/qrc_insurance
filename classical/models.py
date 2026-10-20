@@ -12,6 +12,11 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import TimeSeriesSplit
+import statsmodels.api as sm
+from statsmodels.discrete.discrete_model import NegativeBinomial
+import xgboost as xgb
+import torch
+import torch.nn as nn
 
 C, P, Y = "property_damage_claim_count_t", "active_policy_count_t", "target_property_damage_claim_count"
 H = "is_public_holiday_t_plus_1"
@@ -69,8 +74,6 @@ def glm_design(train, frame, feature, variant):
 
 def glm_fit_predict(train, frame, feature, variant, family):
     """family: 'poisson' (IRLS) or 'nb' (NB2, dispersion by maximum likelihood)."""
-    import statsmodels.api as sm
-    from statsmodels.discrete.discrete_model import NegativeBinomial
     X, off = glm_design(train, train, feature, variant)
     Xe, off_e = glm_design(train, frame, feature, variant)
     y = train[Y].to_numpy(float)
@@ -84,7 +87,6 @@ def glm_fit_predict(train, frame, feature, variant, family):
 
 
 def xgb_model(cfg):
-    import xgboost as xgb
     return xgb.XGBRegressor(objective=cfg["objective"], n_estimators=cfg["n_estimators"], max_depth=cfg["max_depth"],
                             learning_rate=cfg["learning_rate"], min_child_weight=cfg["min_child_weight"],
                             reg_lambda=cfg["reg_lambda"], reg_alpha=0.0, gamma=0.0, subsample=1.0,
@@ -128,6 +130,8 @@ def esn_states(X, W, W_in, rho, scaling, leak):
     """Leaky-tanh state after reading each window from a zero state."""
     s = np.zeros((len(X), len(W)))
     for k in range(X.shape[1]):
+    # s_k = (1 - leak) * s_{k-1} + leak * tanh(scaling * W_in @ x_k + rho * W @ s_{k-1})
+    # Each window starts from s_0 = 0; return its final reservoir state.
         s = (1 - leak) * s + leak * np.tanh(X[:, k] @ (scaling * W_in).T + s @ (rho * W).T)
     return s
 
@@ -172,7 +176,6 @@ MIN_DELTA, INNER_FRACTION, BATCH = 1e-4, 0.2, 64
 
 
 def neural_class(kind):
-    import torch.nn as nn
 
     class RNN(nn.Module):
         def __init__(self, d, hidden, layers):
@@ -219,7 +222,6 @@ def neural_arrays(data, cfg, train_ends, eval_ends):
 
 
 def neural_predict(model, X, mean, scale):
-    import torch
     model.eval()
     with torch.no_grad():
         return model(torch.tensor(X, dtype=torch.float32)).numpy().astype(float) * scale + mean
@@ -228,7 +230,6 @@ def neural_predict(model, X, mean, scale):
 def neural_fit(kind, X, y, cfg, seed, epochs, stopping=None):
     """Adam, minibatches of 64, gradient-norm clipping at 1, standardized target.
     With `stopping`, return the epoch with the best hold-out RMSE (patience rule)."""
-    import torch
     random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
     model = neural_class(kind)(X.shape[2], cfg["hidden_size"], cfg["layers"])
     opt = torch.optim.Adam(model.parameters(), lr=cfg["learning_rate"], weight_decay=cfg["weight_decay"])
@@ -269,7 +270,6 @@ def neural_cv(kind, data, cfg):
 
 
 def neural_fit_predict(kind, data, cfg, seed, endpoints):
-    import torch
     torch.set_num_threads(1)
     torch.use_deterministic_algorithms(True)
     ends = np.arange(cfg["window"] - 1, N_TRAIN)

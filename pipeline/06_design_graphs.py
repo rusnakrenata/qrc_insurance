@@ -1,4 +1,4 @@
-"""Design stage 2: T2, native embeddings on Heron and the coupling search on H0-H4.
+"""Design stage 2: Tm, native embeddings on Heron and the coupling search on H0-H4.
 
   python pipeline/06_design_graphs.py [--search]
 
@@ -21,7 +21,7 @@ from qrc.reservoir import encode  # noqa: E402
 
 DATA = os.path.join(HERE, "..", "data", "design")
 OUT = os.path.join(HERE, "..", "results", "design")
-T2 = dict(edges=[(0, 1), (1, 2), (2, 3), (2, 4), (3, 4), (3, 5), (4, 5)],
+Tm = dict(edges=[(0, 1), (1, 2), (2, 3), (2, 4), (3, 4), (3, 5), (4, 5)],
           J=[0.3835384679783487, -0.0855701843471267, 0.5020370878759355, -0.907276, -0.444414, -2.0, -1.0])
 LHS_SEED, N_LHS = 84201, 28
 ANCHORS = [[-1] * 5, [1] * 5, [-.5] * 5, [.5] * 5]
@@ -61,7 +61,7 @@ def embeddings_table():
         for a, b in zip(g.source, g.target):
             adj[a].add(b)
             adj[b].add(a)
-        for name, e in [("T2", T2["edges"])] + list(GRAPHS.items()):
+        for name, e in [("Tm", Tm["edges"])] + list(GRAPHS.items()):
             rows.append(dict(backend=backend, graph=name, native_embeddings=len(native_embeddings(e, adj, qubits))))
     return pd.DataFrame(rows)
 
@@ -88,8 +88,8 @@ def main():
     theta = encode(df, 0.75, **training_scales(df))
     pr = probe(theta)
     y = df.target_property_damage_claim_count.values[:1095].astype(float)
-    t2 = mc_fast(Reservoir(2, T2["edges"], T2["J"], 0.5, 0.0, 1.6, 2), pr)
-    print(f"T2: MC/ch = {t2[0]:.4f}, T_w = {t2[1]}")
+    tm = mc_fast(Reservoir(2, Tm["edges"], Tm["J"], 0.5, 0.0, 1.6, 2), pr)
+    print(f"Tm: MC/ch = {tm[0]:.4f}, T_w = {tm[1]}")
 
     winners, trials = [], []
     recorded = pd.read_csv(os.path.join(DATA, "graph_coupling_winners.csv")).set_index("topology")
@@ -110,7 +110,7 @@ def main():
             J = json.loads(recorded.loc[name, "J_vector"])
             best = dict(graph=name, stage="recorded winner", J=J, **evaluate(edges, J, pr, theta, y))
             best["recorded_mc_per_channel"] = recorded.loc[name, "MC_per_channel_corrected"]
-        best["mc_retained_vs_T2"] = best["mc_per_channel"] / t2[0]
+        best["mc_retained_vs_Tm"] = best["mc_per_channel"] / tm[0]
         winners.append(best)
         print({k: v for k, v in best.items() if k != "J"}, flush=True)
     if trials:

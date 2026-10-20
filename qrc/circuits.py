@@ -21,13 +21,13 @@ def evolve(qc, c):
 
 
 def reservoir_circuit(c, theta, endpoint, setting=None):
-    """Reset-window replay ending at `endpoint`; measured in `setting` if given."""
+    """RWP ending at `endpoint`; measured in `setting` if given."""
     W = c["window"]
     qc = QuantumCircuit(6, 6 if setting else 0)
     for k, t in enumerate(range(endpoint - W + 1, endpoint + 1)):
         if k > 0:
             for q in range(4):
-                qc.reset(q)                    # partial trace over the injection register
+                qc.reset(q)      # reset the injection register
         for q in range(4):
             qc.ry(theta[t, q], q)
         evolve(qc, c)

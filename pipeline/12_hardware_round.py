@@ -1,7 +1,7 @@
 """One hardware round: one candidate, one layout policy (ha, random or qiskit).
 
-  python pipeline/13_hardware_round.py --candidate 2 --policy ha --round runs/c2_r1 --token <IBM token>
-  python pipeline/13_hardware_round.py --candidate 2 --policy ha --round runs/test --dry-run --limit 6
+  python pipeline/12_hardware_round.py --candidate 2 --policy ha --round runs/c2_r1 --token <IBM token>
+  python pipeline/12_hardware_round.py --candidate 2 --policy ha --round runs/test --dry-run --limit 6
 
 Run the three policies on the same --round folder at the same time.
 """

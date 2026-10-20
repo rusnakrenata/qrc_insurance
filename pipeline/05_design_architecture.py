@@ -12,8 +12,8 @@ import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, ".."))
-from qrc.candidates import load_data, training_scales  # noqa: E402
-from qrc.design import Reservoir, _zridge, select_lambda  # noqa: E402
+from qrc.candidates import load_data, training_scales  
+from qrc.design import Reservoir, _zridge, select_lambda  
 
 OUT = os.path.join(HERE, "..", "results", "design")
 WINDOWS = [1, 2, 5, 7, 14, 21, 28]
@@ -39,7 +39,7 @@ def evaluate(df, n_mem, encoding, J):
     for proto, w in [("CONT", None)] + [("RWP", w) for w in WINDOWS]:
         if proto == "CONT":
             X, ends = res.cont(S, F), np.arange(len(df))
-        else:
+        else: #rwp
             ends = np.arange(w - 1, len(df))
             X = res.rwp(S, F, ends, w)
         tr, va = ends < 1095, (ends >= 1095) & (ends < 1460)

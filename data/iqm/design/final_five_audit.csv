@@ -1,6 +1,0 @@
-role_id,purpose,selection_rule,candidate_id,pool_size,primary_value
-1,forecast_accuracy_leader,minimum chronological training CV among all R1 representatives,H6_W06_r2_local_04_XZinj_plus_YX45,14,3.330959558307346
-2,same_family_resource_efficient_alternative,same topology/protocol as C1; R4; CZ -> settings -> depth -> CV,H6_W02_r3_local_05_XZinj_dropX3,1,168.0
-3,lower_resource_measurement_robust_rwp_alternative,pure R3 + RWP + topology != C1 + Rmax<=1 + CZ<C1 + depth<C1; then CZ -> depth -> Rmax -> shotSD -> CV,RWP_H2_R3,1,80.0
-4,cheap_cont_replay_feasibility_preflight,pure CONT R4; zero-SWAP frozen; CZ -> settings -> depth -> CV,CONT_H2_R4,7,20.0
-5,intrinsic_memory_first_candidate,maximum intrinsic MC/ch among R2 representatives; CONT washout validity already audited,CONT_H2_R2,14,1.348139

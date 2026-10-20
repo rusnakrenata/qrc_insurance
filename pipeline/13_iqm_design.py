@@ -1,6 +1,6 @@
 """IQM Emerald design: native embeddings, the H5/H6 coupling search and the five frozen IQM roles.
 
-  python pipeline/14_iqm_design.py [--search]
+  python pipeline/13_iqm_design.py [--search]
 
 Default: re-evaluates the recorded selections (data/iqm/design/). --search repeats the
 coupling search on H5 and H6 (60 candidates each). The later IQM stages (Y field, Trotter depth,
