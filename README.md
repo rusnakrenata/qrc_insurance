@@ -194,10 +194,7 @@ median daily deviation per round), `figures/fig_capacity.*` (capacity decomposit
 `figures/eda_target.png` (pipeline/02).
 
 
-## License
+## License and Consent to Publish Data
 
 MIT, see `LICENSE`. If you use this code or data, please cite the article above.
-
-## Conset to Publish Data
-
-The original issuer data are available in the data/raw/wrc_daily_dataset.csv
+The original issuer data are available in data/raw/qrc_daily_dataset.csv; the official consent to publish raw data is part of the repository.
