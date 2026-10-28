@@ -1,0 +1,35 @@
+{
+  "w1": {
+    "n_circuits": 464,
+    "max_duration_us": 4.924,
+    "median_duration_us": 4.924,
+    "cz_per_circuit": 40,
+    "resets_per_circuit": 0,
+    "max_depth": 123
+  },
+  "scrambled": {
+    "n_circuits": 464,
+    "max_duration_us": 495.3720000000114,
+    "median_duration_us": 495.3720000000113,
+    "cz_per_circuit": 4680,
+    "resets_per_circuit": 464,
+    "max_depth": 10795,
+    "full_length_check": {
+      "scrambled_steps": 116,
+      "true_steps": 1,
+      "cz": 4680,
+      "resets": 464,
+      "duration_us": 495.3720000000114,
+      "duration_full_us": 495.3720000000114,
+      "identical_to_full": true
+    }
+  },
+  "full": {
+    "n_circuits": 464,
+    "max_duration_us": 495.3720000000114,
+    "median_duration_us": 495.3720000000113,
+    "cz_per_circuit": 4680,
+    "resets_per_circuit": 464,
+    "max_depth": 10795
+  }
+}

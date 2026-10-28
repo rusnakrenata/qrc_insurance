@@ -2,7 +2,7 @@
 
 This repository contains the data, code and recorded outputs needed to reconstruct the results of the article
 
-> R. Rusnáková, E. Šlapak, G. K. Pandey, J. Gazda and M. Chovanec, *Hardware-Aware Design and Layout
+> R. Rusnáková, E. Šlapak, G. K. Pandey and J. Gazda, *Hardware-Aware Design and Layout
 > Selection in Quantum Reservoir Computing for Insurance Claims Forecasting*, submitted to IEEE Transactions
 > on Quantum Engineering.
 > Article link: *will be added after acceptance.*
@@ -83,7 +83,10 @@ data/
   daily_claims.csv            forecasting data set: 1692 forecast origins (2022-01-01 .. 2026-08-19)
   classical_predictions/      reference 2026 predictions of the 36 classical runs (one configuration per family)
   design/                     recorded inputs and outputs of the reservoir design stages 05-10
-  ibm_kingston_runs/          complete records of all IBM Kingston rounds (7-11 Oct 2026)
+  ibm_kingston_runs/          complete records of all IBM Kingston rounds (7-11 Oct 2026); each HA folder
+                              also holds noisy_circuits.qpy, the compiled circuits simulated in Aer
+  ibm_kingston_ablation/      C4 memory ablation on IBM Kingston (23 Oct 2026): full replay, scrambled
+                              history and single-step (W = 1) arms on one HA layout
   iqm/                        IQM Emerald reservoir definition; iqm/design/ recorded IQM design outputs
   optimization_levels/        transpiler audit of Qiskit levels 1-3 made during the study
 configs/
@@ -137,16 +140,20 @@ so `git diff` shows directly whether anything changed. Times are wall-clock on a
 | | `python pipeline/10_design_freeze.py` | 1.5 min | Table III: the five frozen candidates |
 | Ideal QRC | `python pipeline/11_ideal_reservoir.py` | 1 min | ideal 2025/2026 forecasts of C1-C5 (`results/ideal/`) |
 | Hardware | `python pipeline/12_hardware_round.py ...` | QPU | one hardware round (see below) |
-| IQM | `python pipeline/13_iqm_design.py` | 10 min | Sec. VII-E: IQM Emerald portability check |
+| IQM | `python pipeline/13_iqm_design.py` | 10 min | Sec. VI-E: IQM Emerald portability check |
 | Analysis | `python analysis/build_run_table.py` | s | `results/runs.csv`, `results/daily.csv` from the raw IBM records |
 | | `python analysis/statistics.py` | 20 s | Tables V and VII, paired tests, bootstrap (`results/tables/`) |
 | | `python analysis/observables.py` | s | Fig. 6: observable contraction and shift |
 | | `python analysis/distortion_model.py` | s | Fig. 7: pre-deployment predictors of distortion |
 | | `python analysis/ideal_diagnostics.py` | 8 min | Table VI: inputs relative to the training range |
-| | `python analysis/optimization_levels.py` | 10 s | Sec. VI: Qiskit levels 1-3 |
+| | `python analysis/optimization_levels.py` | 10 s | Sec. V: Qiskit levels 1-3 |
 | | `python analysis/compute_final_candidate_memory.py --check` | 6 min | Table VIII: memory of the frozen candidates |
-| | `python analysis/analyze_nonlinear_capacity.py` | 4 min | Sec. VII-C: nonlinear capacity (`results/capacity/`) |
-| | `python analysis/timing_classical.py`, `python analysis/timing_qrc.py` | 1 min each | Sec. VII-D: computational cost |
+| | `python analysis/analyze_nonlinear_capacity.py` | 4 min | Sec. VI-C: nonlinear capacity (`results/capacity/`) |
+| | `python analysis/timing_classical.py`, `python analysis/timing_qrc.py` | 1 min each | Sec. VI-D: computational cost |
+| | `python analysis/readout_diagnostics.py` | 1 min | frozen vs retrained readout, linear rescaling of features, standardized weights, memory test with W = 1 (`results/readout_diagnostics/`) |
+| | `python analysis/coherence_contraction.py` | 10 s | contraction against T1, T2 and circuit duration (`results/coherence/`) |
+| | `python analysis/aer_idle_time.py` | 30 s | idle time in the Aer screening, Aer vs QPU contraction (`results/aer_idle/`) |
+| | `python analysis/memory_ablation.py --compare-only data/ibm_kingston_ablation/candidate4/20261023T123117Z` | s | C4 memory ablation: RMSE of the three arms, paired tests (`comparison/` of the session); `--token ...` runs a new session on the QPU |
 | Figures | `python analysis/figures.py` | 10 s | Figs. 2, 4, 5, 6, 7 |
 | | `python analysis/plot_final_candidate_memory.py` | s | Fig. 8 |
 
@@ -158,7 +165,7 @@ Steps 03 and 05-08 re-evaluate the recorded selections by default. The full sear
 
 | Article | Script | Output |
 |---|---|---|
-| Table II, Sec. III-A (predictor screening, F2/F3/F4) | pipeline/02 | `results/eda/` |
+| Table II, Sec. II-A (predictor screening, F2/F3/F4) | pipeline/02 | `results/eda/` |
 | Fig. 2 (claims, exposure, clip level) | analysis/figures.py | `figures/fig_data.*` |
 | Table III (frozen candidates) | pipeline/10, pipeline/11 | `results/design/freeze_candidates.csv`, `results/ideal/summary.csv` |
 | Table IV (execution settings) | qrc/candidates.py, pipeline/12 | `data/ibm_kingston_runs/*/*/experiment.json` |
@@ -168,12 +175,19 @@ Steps 03 and 05-08 re-evaluate the recorded selections by default. The full sear
 | Fig. 6 (distortion mechanism) | analysis/observables.py | `results/observables.csv` |
 | Fig. 7 (pre-deployment indicators) | analysis/distortion_model.py | `results/tables/distortion_predictors.csv` |
 | Table VIII, Fig. 8 (memory) | analysis/compute_final_candidate_memory.py, plot_final_candidate_memory.py | `results/memory/` |
-| Sec. VII-C (nonlinear capacity) | analysis/analyze_nonlinear_capacity.py | `results/capacity/` |
-| Sec. VII-D (computational cost) | analysis/timing_classical.py, timing_qrc.py | `results/timing/` |
-| Sec. VI (optimization levels) | analysis/optimization_levels.py | `results/tables/optimization_levels.csv` |
-| Sec. VII-E (IQM Emerald) | pipeline/13_iqm_design.py | `results/iqm/` |
+| Sec. VI-C (nonlinear capacity) | analysis/analyze_nonlinear_capacity.py | `results/capacity/` |
+| Sec. VI-D (computational cost) | analysis/timing_classical.py, timing_qrc.py | `results/timing/` |
+| Sec. V (optimization levels) | analysis/optimization_levels.py | `results/tables/optimization_levels.csv` |
+| Sec. VI-E (IQM Emerald) | pipeline/13_iqm_design.py | `results/iqm/` |
 | Table IX (classical configurations) | pipeline/03, pipeline/04 | `configs/classical_selected.json`, `results/classical_validation/validation_2025.csv`, `configs/classical_final.json` |
 | Table X (all 21 paired rounds) | analysis/build_run_table.py | `results/runs.csv` |
+| Sec. II-C (frozen vs retrained readout) | analysis/readout_diagnostics.py | `results/readout_diagnostics/headline.json`, `per_run.csv` |
+| Sec. VI-B (level-shift share, feature rescaling, standardized weights) | analysis/readout_diagnostics.py | `results/readout_diagnostics/headline.json`, `weights_summary.csv` |
+| Sec. VI-B (mean change of $Z_2$ in C4) | analysis/observables.py | `results/observables.csv` |
+| Sec. V, VI-B (idle time in the Aer screening) | analysis/aer_idle_time.py | `results/aer_idle/` |
+| Sec. VI-C (readouts refitted on $W=1$ features) | analysis/readout_diagnostics.py | `results/readout_diagnostics/memory_in_simulation.csv` |
+| Sec. VI-C (C4 memory ablation on hardware) | analysis/memory_ablation.py | `data/ibm_kingston_ablation/candidate4/20261023T123117Z/` |
+| Sec. VI-C, VI-D (contraction against circuit duration and $T_2$) | analysis/coherence_contraction.py | `results/coherence/correlations.csv` |
 
 Supplementary figures that are not in the article: `figures/fig_reproducibility.*` (drawn by `figures.py`,
 median daily deviation per round), `figures/fig_capacity.*` (capacity decomposition) and

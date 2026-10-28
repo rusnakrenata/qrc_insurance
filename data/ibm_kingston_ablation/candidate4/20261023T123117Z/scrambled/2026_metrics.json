@@ -1,0 +1,42 @@
+{
+  "candidate": 4,
+  "arm": "scrambled",
+  "window": 117,
+  "n": 232,
+  "layout": [
+    95,
+    94,
+    93,
+    79,
+    73,
+    72
+  ],
+  "ideal": {
+    "rmse": 5.646295148334556,
+    "bias": -1.4892179723003927
+  },
+  "qpu": {
+    "rmse": 5.5258011773074776,
+    "mae": 4.306964686519569,
+    "bias": -0.6071265444595034
+  },
+  "transfer_d": 0.9818712818065004,
+  "level_shift": 0.8820914278408893,
+  "resources": {
+    "n_circuits": 464,
+    "max_duration_us": 495.3720000000114,
+    "median_duration_us": 495.3720000000113,
+    "cz_per_circuit": 4680,
+    "resets_per_circuit": 464,
+    "max_depth": 10795,
+    "full_length_check": {
+      "scrambled_steps": 116,
+      "true_steps": 1,
+      "cz": 4680,
+      "resets": 464,
+      "duration_us": 495.3720000000114,
+      "duration_full_us": 495.3720000000114,
+      "identical_to_full": true
+    }
+  }
+}

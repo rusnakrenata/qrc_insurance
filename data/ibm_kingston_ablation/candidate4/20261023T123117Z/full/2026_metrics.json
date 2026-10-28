@@ -1,0 +1,33 @@
+{
+  "candidate": 4,
+  "arm": "full",
+  "window": 117,
+  "n": 232,
+  "layout": [
+    95,
+    94,
+    93,
+    79,
+    73,
+    72
+  ],
+  "ideal": {
+    "rmse": 5.660942216987964,
+    "bias": -1.5414168306673408
+  },
+  "qpu": {
+    "rmse": 5.493558175336644,
+    "mae": 4.293984749371885,
+    "bias": -0.5919129889184077
+  },
+  "transfer_d": 1.0436150337222923,
+  "level_shift": 0.9495038417489334,
+  "resources": {
+    "n_circuits": 464,
+    "max_duration_us": 495.3720000000114,
+    "median_duration_us": 495.3720000000113,
+    "cz_per_circuit": 4680,
+    "resets_per_circuit": 464,
+    "max_depth": 10795
+  }
+}

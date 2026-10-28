@@ -1,0 +1,90 @@
+{
+  "created_utc": "2026-10-23T12:31:18Z",
+  "candidate": 4,
+  "arms": [
+    "w1",
+    "scrambled",
+    "full"
+  ],
+  "backend": "ibm_kingston",
+  "shots": 2048,
+  "optimization_level": 1,
+  "batch_dates": 78,
+  "scramble": "empirical",
+  "keep_true": 1,
+  "scrambled_steps": "1..116 noise, 117..117 true",
+  "seed": 20261023,
+  "limit": null,
+  "dry_run": false,
+  "aer": false,
+  "ideal_only": false,
+  "full_window": 117,
+  "settings": [
+    "XXXXYX",
+    "ZZZZZZ"
+  ],
+  "features": [
+    "X0",
+    "X1",
+    "X2",
+    "X3",
+    "Z0",
+    "Z1",
+    "Z2",
+    "Z3",
+    "YX45"
+  ],
+  "readout": {
+    "weights": [
+      -1.0062215620619288,
+      2.095538671019691,
+      2.3637074197994825,
+      3.28201123019673,
+      -4.867805652001217,
+      -0.8148286481023806,
+      -24.381945460779107,
+      3.705054164527189,
+      -0.4578472663353768
+    ],
+    "intercept": 31.22917429758523,
+    "fitted_on": "2022-2024, CONT features"
+  },
+  "reference_root": "results\\ibm_final\\candidate4",
+  "source_hashes": {
+    "scripts\\16_01_candidate4_memory_ablation_qpu.py": "69520ddd8a35eb1826e79bbf1aa86f37815039d349184037c898ba0216c17bb3",
+    "reproducibility_package\\qrc\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reproducibility_package\\qrc\\candidates.py": "1860841d8d8d5f21824d021bcfe349042f0de62b4224cddad6dd4ec530965887",
+    "reproducibility_package\\qrc\\circuits.py": "b8fb0e1e5b80fd1198697391bc1ad2217df7380b280bc114cbfba8ae7e8d4982",
+    "reproducibility_package\\qrc\\design.py": "1d0b1af2ed29d349c6c32cd1023946d398059e5dff8019344c7e05febdf458ff",
+    "reproducibility_package\\qrc\\layouts.py": "625c8111020167c43264a7f3421c8de5a214d53a562c970b69e59c6c08c6032d",
+    "reproducibility_package\\qrc\\noise.py": "f42f8f33074d9c5e6397caf7bb3642a0331b9b497eb6748a9f53f2377649e53a",
+    "reproducibility_package\\qrc\\readout.py": "1d2dc9bedeeaf89460f61482cb6cf76acc935e31e19c66623b0a35afa7eedc5f",
+    "reproducibility_package\\qrc\\reservoir.py": "bfe97af4d1bc5a4155d4862ad1f3edf7634f5dd97700b4fd6887ff6839fc497b",
+    "reproducibility_package\\data\\daily_claims.csv": "7c369e5138be436a5d75c0670df3f32537f2ededa6396cc4f4b49f816b6399bf"
+  },
+  "layout": [
+    95,
+    94,
+    93,
+    79,
+    73,
+    72
+  ],
+  "layout_source": "--layout",
+  "calibration_at_start": {
+    "w1": "2026-10-23 13:45:31+02:00",
+    "scrambled": "2026-10-23 13:45:31+02:00",
+    "full": "2026-10-23 13:45:31+02:00"
+  },
+  "expected_qpu_seconds": {
+    "w1": 260.0,
+    "scrambled": 725.0,
+    "full": 725.0
+  },
+  "finished_utc": "2026-10-23T14:14:49Z",
+  "calibration_at_end": {
+    "w1": "2026-10-23 15:17:02+02:00",
+    "scrambled": "2026-10-23 15:17:02+02:00",
+    "full": "2026-10-23 15:17:02+02:00"
+  }
+}
