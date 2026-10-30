@@ -34,7 +34,7 @@ encoding (Table V and Fig. 4 of the article).
 
 | Model | RMSE | Bias | cRMSE | Δ vs Ridge [95 % CI] |
 |---|---|---|---|---|
-| Ridge | 5.36 | +0.32 | 5.35 | — |
+| Ridge | 5.36 | +0.33 | 5.35 | — |
 | NB2 GLM | 5.57 | +0.86 | 5.50 | +0.21 [−0.03, +0.46] |
 | ESN (10 seeds) | 5.60 | +0.41 | 5.40 | +0.24 [+0.12, +0.35] |
 | GRU (10 seeds) | 5.76 | −1.50 | 5.54 | +0.40 [−0.03, +0.80] |
@@ -153,6 +153,8 @@ so `git diff` shows directly whether anything changed. Times are wall-clock on a
 | | `python analysis/readout_diagnostics.py` | 1 min | frozen vs retrained readout, linear rescaling of features, standardized weights, memory test with W = 1 (`results/readout_diagnostics/`) |
 | | `python analysis/coherence_contraction.py` | 10 s | contraction against T1, T2 and circuit duration (`results/coherence/`) |
 | | `python analysis/aer_idle_time.py` | 30 s | idle time in the Aer screening, Aer vs QPU contraction (`results/aer_idle/`) |
+| | `python analysis/washout_threshold.py` | 3 min | Sec. IV-D: replay windows of C4/C5 for washout thresholds 0.1-0.001 (`results/design/washout_epsilon.csv`) |
+| | `python analysis/run_timing.py` | s | Appendix C: layouts, QPU job IDs, submission, execution and calibration times of the 63 evaluations (`results/tables/run_timing.csv`) |
 | | `python analysis/memory_ablation.py --compare-only data/ibm_kingston_ablation/candidate4/20261023T123117Z` | s | C4 memory ablation: RMSE of the three arms, paired tests (`comparison/` of the session); `--token ...` runs a new session on the QPU |
 | Figures | `python analysis/figures.py` | 10 s | Figs. 2, 4, 5, 6, 7 |
 | | `python analysis/plot_final_candidate_memory.py` | s | Fig. 8 |

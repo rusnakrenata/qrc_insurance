@@ -85,7 +85,7 @@ def r2_gain_permutation(y, base, extra, strata, n_perm, seed):
 def feature_set_gate(df):
     """2025 RMSE of Ridge (CV-chosen penalty), Poisson and NB2 GLMs on F2, F3, F4 (exposure as standardized covariate)."""
     tr, va = df.iloc[:1095], df.iloc[1095:1460]
-    alphas = [1, 2, 3, 5, 6, 6.25, 6.5, 6.6, 6.75, 7, 7.5, 8, 9, 10, 15, 20, 25, 30, 50, 75, 100]
+    alphas = [1e-4, 1e-3, 1e-2, 0.03, 0.1, 0.3, 0.5, 1, 2, 3, 5, 6, 6.25, 6.5, 6.6, 6.75, 7, 7.5, 8, 9, 10, 15, 20, 25, 30, 50, 75, 100]
     rows = []
     for f in ("F2", "F3", "F4"):
         cv = {a: np.mean([M.rmse(M.ridge_fit_predict(tr.iloc[i], tr.iloc[j], f, a)[0], tr[Y].iloc[j])

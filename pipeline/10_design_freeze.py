@@ -1,4 +1,4 @@
-"""Design stage 6: the five candidates, replay windows for C4/C5 and the frozen readouts.
+"""Design stage 6: the five candidates (Pareto front of the noisy screen), replay windows for C4/C5 and the frozen readouts.
 
   python pipeline/10_design_freeze.py
 
@@ -20,12 +20,22 @@ from qrc.reservoir import encode  # noqa: E402
 
 DATA = os.path.join(HERE, "..", "data", "design")
 OUT = os.path.join(HERE, "..", "results", "design")
-CHOSEN = {1: ("RWP_H3_R1R3", 3), 2: ("RWP_H3_R4", 3), 3: ("RWP_H2_R3", 2), 4: ("CONT_H0_R4", 4), 5: ("CONT_H2_R2", 2)}
 LAMBDAS = [1e-4, 1e-3, 1e-2, 1e-1, 1.0, 10.0, 100.0, 300.0]
 FEATURES = {"XZ_injection": ["X0", "X1", "X2", "X3", "Z0", "Z1", "Z2", "Z3"],
             "XZinj_dropX3": ["X0", "X1", "X2", "Z0", "Z1", "Z2", "Z3"],
             "XZinj_dropX3_plus_YX45": ["X0", "X1", "X2", "Z0", "Z1", "Z2", "Z3", "YX45"],
             "XZinj_plus_YX45": ["X0", "X1", "X2", "X3", "Z0", "Z1", "Z2", "Z3", "YX45"]}
+
+
+def chosen_candidates():
+    """Candidates from the noisy screen: every reservoir with a Pareto-nondominated operating point
+    (2025 RMSE, CZ per feature vector, shots per setting; all minimized), frozen at the Trotter depth
+    of its lowest-RMSE nondominated point and numbered C1, C2, ... by that RMSE."""
+    s = pd.read_csv(os.path.join(DATA, "noise_sampled_summary.csv"))
+    v = s[["rmse_mean", "feature_vector_n_cz", "shots_per_setting"]].to_numpy(float)
+    front = s[[not (np.all(v <= x, axis=1) & np.any(v < x, axis=1)).any() for x in v]]
+    best = front.sort_values("rmse_mean").groupby("candidate_key", sort=False).head(1)
+    return {k: (row.candidate_key, int(row.r)) for k, row in enumerate(best.itertuples(), 1)}
 
 
 def washout_steps(res, S, F, eps=0.01):
@@ -70,7 +80,9 @@ def main():
     df = load_data().iloc[:1460].reset_index(drop=True)
     y = df.target_property_damage_claim_count.values.astype(float)
     rows, wash = [], []
-    for k, (key, r) in CHOSEN.items():
+    chosen = chosen_candidates()
+    print("chosen from the Pareto front:", chosen)
+    for k, (key, r) in chosen.items():
         rep = reps.loc[key]
         J = json.loads(rep.J_json)
         edges = GRAPHS[rep.topology]

@@ -22,7 +22,7 @@ from classical import models as M
 
 OUT = os.path.join(HERE, "..", "results", "classical_search")
 FROZEN = os.path.join(HERE, "..", "configs", "classical_selected.json")
-RIDGE_ALPHAS = [1, 2, 3, 5, 6, 6.25, 6.5, 6.6, 6.75, 7, 7.5, 8, 9, 10, 15, 20, 25, 30, 50, 75, 100]
+RIDGE_ALPHAS = [1e-4, 1e-3, 1e-2, 0.03, 0.1, 0.3, 0.5, 1, 2, 3, 5, 6, 6.25, 6.5, 6.6, 6.75, 7, 7.5, 8, 9, 10, 15, 20, 25, 30, 50, 75, 100]
 
 
 def ridge_cv(train, feature, alpha):

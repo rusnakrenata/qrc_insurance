@@ -13,18 +13,18 @@
   "ridge": [
     {
       "feature_set": "F4",
-      "alpha": 1.0,
-      "cv_rmse": 3.6729324067793576
+      "alpha": 0.0001,
+      "cv_rmse": 3.6710978196218393
     },
     {
       "feature_set": "F4",
-      "alpha": 2.0,
-      "cv_rmse": 3.674987382345239
+      "alpha": 0.001,
+      "cv_rmse": 3.6710992469206887
     },
     {
       "feature_set": "F4",
-      "alpha": 3.0,
-      "cv_rmse": 3.6770555795243856
+      "alpha": 0.01,
+      "cv_rmse": 3.6711135519041562
     }
   ],
   "poisson": [
