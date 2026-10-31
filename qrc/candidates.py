@@ -5,7 +5,7 @@ import pandas as pd
 
 DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "daily_claims.csv")
 
-# Logical coupling graphs (qubit 0..3 = C, D, P, H; 4,5 = memory M1, M2).
+# qubits 0-3: C, D, P, H; 4-5: memory
 GRAPHS = {
     "H0": [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5)],
     "H1": [(0, 1), (1, 2), (2, 3), (3, 4), (3, 5)],

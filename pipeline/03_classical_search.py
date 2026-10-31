@@ -17,7 +17,7 @@ from threadpoolctl import threadpool_limits
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, ".."))
-from classical import models as M  
+from classical import models as M
 
 
 OUT = os.path.join(HERE, "..", "results", "classical_search")
@@ -90,7 +90,7 @@ def search(family, data):
                          r["requested_connectivity"], r["spectral_radius"], r["input_scaling"], r["leak_rate"],
                          r["ridge_alpha"])
     elif family == "rnn":
-        # screening: one-layer networks, fixed optimizer; then tune the three best feature/window branches
+        # screen, then tune the three best branches
         screen = [M.neural_cv("rnn", data, dict(feature_set=f, window=w, hidden_size=h, learning_rate=.001,
                                                  weight_decay=1e-4, layers=1))
                   for f, w, h in itertools.product(M.FEATURES, M.WINDOWS, [8, 16, 32, 64])]

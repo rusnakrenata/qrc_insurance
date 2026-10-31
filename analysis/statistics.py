@@ -64,11 +64,7 @@ def half_split(P, y):
 
 
 def paired_rounds(daily, a, b, metric, block=BLOCK):
-    """Two-level bootstrap of the mean paired difference a - b over rounds.
-
-    metric: 'rmse' (forecast error vs observations) or 'd' (distance to ideal).
-    Rounds are resampled within candidate, dates in circular blocks.
-    """
+    """Bootstrap of the mean paired difference a - b (rounds within candidate, dates in blocks)."""
     keys = sorted(set(map(tuple, daily[["candidate", "round"]].drop_duplicates().values)))
     arr = {}
     for (c, r) in keys:
@@ -98,7 +94,7 @@ def paired_rounds(daily, a, b, metric, block=BLOCK):
         boot.append(np.mean(vals))
     lo, hi = ci(boot)
     wins = int(np.sum(diffs < 0))
-    # exact two-sided sign test on rounds (rounds treated as independent replications)
+    # sign test over rounds
     from math import comb
     k, m = min(wins, len(diffs) - wins), len(diffs)
     p_sign = min(1.0, 2 * sum(comb(m, j) for j in range(k + 1)) / 2 ** m)
@@ -163,7 +159,7 @@ def main():
         level_share_median=("level_share", "median"),
         noisy_direct_d_median=("noisy_direct_d", "median"), noisy_sampled_d_median=("noisy_sampled_d", "median"),
         flagged_coupler=("cal_max_cz", lambda s: int((s > 0.04).sum()))).reset_index()
-    # within-candidate spread of the transfer distortion, averaged over candidates with >=3 rounds
+    # spread of d within candidate
     spread = runs.groupby(["approach", "candidate"]).transfer_d.agg(lambda s: s.max() - s.min()).groupby("approach").median()
     pooled["d_range_within_candidate_median"] = pooled.approach.map(spread)
     pooled.to_csv(os.path.join(tdir, "hardware_pooled.csv"), index=False)
@@ -184,7 +180,7 @@ def main():
                              ci_low=r["ci_low"], ci_high=r["ci_high"]))
     pd.DataFrame(sens).to_csv(os.path.join(tdir, "block_sensitivity.csv"), index=False)
 
-    # post-hoc but outcome-blind: random layouts with and without a degraded coupler (>4 % CZ error)
+    # random layouts with / without a coupler above 4 % CZ error
     rnd = runs[runs.approach == "random"].copy()
     rnd["flag"] = rnd.cal_max_cz > 0.04
     rnd.groupby("flag").agg(n=("round", "count"), d_median=("transfer_d", "median"), d_max=("transfer_d", "max"),

@@ -1,13 +1,8 @@
-"""Select one configuration per classical family on 2025, then forecast 2026 with it.
+"""Select one configuration per classical family on 2025 and forecast 2026.
 
   python pipeline/04_classical_2026.py [--methods esn,rnn] [--compare data/classical_predictions]
 
-Every model is fitted on 2022-2024. The three CV-ranked configurations of each family
-(configs/classical_selected.json) are scored on 2025; the one with the lowest 2025 RMSE
-(mean over seeds for ESN, RNN and GRU) is written to configs/classical_final.json and is
-the only one evaluated on 2026.
-
-Writes results/classical_validation/ and results/classical/.
+Writes configs/classical_final.json, results/classical_validation/ and results/classical/.
 """
 import argparse
 import json
@@ -20,7 +15,7 @@ from threadpoolctl import threadpool_limits
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, ".."))
-from classical import models as M 
+from classical import models as M
 
 RES = os.path.join(HERE, "..", "results")
 FROZEN = os.path.join(HERE, "..", "configs", "classical_selected.json")
@@ -46,7 +41,7 @@ def forecast(method, cfg, seed, data, ends):
     if method in ("poisson", "nb"):
         return M.glm_fit_predict(train, data.iloc[ends], cfg["feature_set"], cfg["variant"], method)[0]
     if method == "esn":
-        # the readout alpha is re-chosen by training CV for every reservoir seed
+        # readout alpha by CV for each seed
         arrays, _ = M.esn_prepare(data, cfg["feature_set"], int(cfg["window_length"]))
         W, W_in = M.esn_reservoir(int(cfg["reservoir_size"]), len(M.FEATURES[cfg["feature_set"]]), seed,
                                   cfg["requested_connectivity"])

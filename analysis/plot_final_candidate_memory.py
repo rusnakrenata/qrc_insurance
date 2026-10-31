@@ -1,4 +1,4 @@
-"""Memory-decay figure of the frozen candidates, from results/memory (no reservoir runs).
+"""Memory figure of the frozen candidates from results/memory/.
 
   python analysis/plot_final_candidate_memory.py
 

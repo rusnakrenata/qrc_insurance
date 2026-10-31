@@ -154,7 +154,8 @@ so `git diff` shows directly whether anything changed. Times are wall-clock on a
 | | `python analysis/coherence_contraction.py` | 10 s | contraction against T1, T2 and circuit duration (`results/coherence/`) |
 | | `python analysis/aer_idle_time.py` | 30 s | idle time in the Aer screening, Aer vs QPU contraction (`results/aer_idle/`) |
 | | `python analysis/washout_threshold.py` | 3 min | Sec. IV-D: replay windows of C4/C5 for washout thresholds 0.1-0.001 (`results/design/washout_epsilon.csv`) |
-| | `python analysis/run_timing.py` | s | Appendix C: layouts, QPU job IDs, submission, execution and calibration times of the 63 evaluations (`results/tables/run_timing.csv`) |
+| | `python analysis/timing_pre_post.py` | ~1.5 h (12 cores) | Table XI: classical pre- and post-processing per candidate and layout policy, re-measured on an idle machine (`results/timing/pre_post_by_policy.csv`) |
+| | `python analysis/run_timing.py` | s | Table XI: layouts, QPU, pre- and post-processing time, probe and calibration changes of the 63 evaluations (`results/tables/run_timing.csv`) |
 | | `python analysis/memory_ablation.py --compare-only data/ibm_kingston_ablation/candidate4/20261023T123117Z` | s | C4 memory ablation: RMSE of the three arms, paired tests (`comparison/` of the session); `--token ...` runs a new session on the QPU |
 | Figures | `python analysis/figures.py` | 10 s | Figs. 2, 4, 5, 6, 7 |
 | | `python analysis/plot_final_candidate_memory.py` | s | Fig. 8 |
@@ -200,3 +201,7 @@ median daily deviation per round), `figures/fig_capacity.*` (capacity decomposit
 
 MIT, see `LICENSE`. If you use this code or data, please cite the article above.
 The original issuer data are available in data/raw/qrc_daily_dataset.csv; the official consent to publish raw data is part of the repository.
+
+---
+
+*Note:* Preliminary diagnostic runs mentioned in footnotes of the article (Estimator and M3 comparison, $X_3$ diagnostic, covariance check of Rule R3) are not part of the reproducibility package and are available from the authors on request.

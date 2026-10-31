@@ -1,9 +1,4 @@
-"""Six-qubit quantum reservoir: encoding, Trotterised dynamics, RWP features.
-
-Qubits 0-3 are injection qubits (claims C_t, target weekday D, exposure P_t,
-holiday H), qubits 4-5 form the memory register. Qubit 0 is the leftmost
-tensor factor. Exact density-matrix simulation (no sampling, no noise).
-"""
+"""Six-qubit reservoir: encoding, Trotterized dynamics and RWP features (exact density matrices)."""
 from functools import reduce
 
 import numpy as np
@@ -49,12 +44,11 @@ def trotter_unitary(edges, J, hx, hy, dt, r):
 
 
 def step_operators(U, theta):
-    """Kraus-like maps A_t[a] acting on the memory register for every input row.
-    Change in memory register: rho_m -> sum_a A_t[a] rho_m A_t[a]^dagger, where a = 0..15 is the injection register basis."""
+    """Operators A_t[a] acting on the memory register for every input row."""
     U4 = U.reshape(DIM_I, DIM_M, DIM_I, DIM_M)
     out = np.empty((len(theta), DIM_I, DIM_M, DIM_M), dtype=complex)
     for t, row in enumerate(theta):
-        # State after R_Y rotations on the injection qubits, then apply U and trace out the injection register
+        # encode, evolve, trace out the injection register
         phi = reduce(np.kron, [np.array([np.cos(a / 2), np.sin(a / 2)]) for a in row])
         out[t] = np.einsum("ambn,b->amn", U4, phi)
     return out
@@ -71,7 +65,7 @@ def rwp_features(A, endpoints, window, names):
         rho_m = np.zeros((DIM_M, DIM_M), dtype=complex)
         rho_m[0, 0] = 1 # initial memory state |00><00|
         for t in range(e - window + 1, e + 1):
-            # full state after evolution: |psi_a> branches of the injection register
+            # branches |psi_a> of the injection register
             # partial trace for rho_m = sum_a <psi_a|rho|psi_a>
             rho = np.einsum("amn,nk,bpk->ambp", A[t], rho_m, A[t].conj()).reshape(64, 64)
             rho_m = np.einsum("amn,nk,apk->mp", A[t], rho_m, A[t].conj())

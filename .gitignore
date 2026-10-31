@@ -2,3 +2,9 @@ __pycache__/
 *.pyc
 .venv/
 
+# IBM job identifiers (not needed to reproduce the results)
+data/ibm_kingston_runs/**/job.json
+data/ibm_kingston_runs/**/probe_job.json
+data/ibm_kingston_runs/**/replaced_jobs/
+data/ibm_kingston_ablation/**/jobs.json
+results/timing/*_quick.csv

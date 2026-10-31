@@ -1,4 +1,4 @@
-"""Qiskit optimization levels 1-3 on a saved Kingston calibration (no QPU jobs).
+"""Qiskit optimization levels 1-3 on a saved Kingston calibration.
 
   python analysis/optimization_levels.py
 """

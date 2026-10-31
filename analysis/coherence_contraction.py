@@ -1,13 +1,7 @@
-"""Contraction of the observables against coherence and gate error (Sec. VI-C, VI-D).
+"""Observable contraction eta_j against T1, T2 and CZ error of the layout.
 
-For the 63 stored runs and the C4 memory-ablation session, T1 and T2 of the layout qubits and
-the CZ errors of the layout couplers come from the calibration snapshot of the round, and eta_j
-is refitted from the 2026 features (z_qpu = eta_j * z_ideal + zeta_j). Spearman correlations of
-  1  eta(Y4X5) of C1 and C4 with T2 and with circuit duration / memory-qubit T2
-  2  eta of each X_j, Z_j with T1, T2 and CZ error of its own qubit (within candidate and observable)
-  3  the mean eta of a run with the median T2 and CZ errors of its layout (within candidate)
+  python analysis/coherence_contraction.py
 
-Usage:  python analysis/coherence_contraction.py
 Writes results/coherence/.
 """
 import glob

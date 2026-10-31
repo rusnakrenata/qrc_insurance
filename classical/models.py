@@ -1,9 +1,4 @@
-"""Classical forecasters: Ridge, Poisson/NB2 GLMs, XGBoost, ESN, vanilla RNN and GRU.
-
-All models predict C_{t+1} from the F2/F3/F4 inputs of day t (claims, policies)
-and day t+1 (weekday, holiday). Scalers are fitted on training rows only.
-Chronological CV uses five expanding folds (scikit-learn TimeSeriesSplit).
-"""
+"""Classical forecasters: ridge, Poisson/NB2 GLMs, XGBoost, ESN, RNN and GRU."""
 import json
 import random
 import warnings
@@ -131,7 +126,6 @@ def esn_states(X, W, W_in, rho, scaling, leak):
     s = np.zeros((len(X), len(W)))
     for k in range(X.shape[1]):
     # s_k = (1 - leak) * s_{k-1} + leak * tanh(scaling * W_in @ x_k + rho * W @ s_{k-1})
-    # Each window starts from s_0 = 0; return its final reservoir state.
         s = (1 - leak) * s + leak * np.tanh(X[:, k] @ (scaling * W_in).T + s @ (rho * W).T)
     return s
 
@@ -228,8 +222,7 @@ def neural_predict(model, X, mean, scale):
 
 
 def neural_fit(kind, X, y, cfg, seed, epochs, stopping=None):
-    """Adam, minibatches of 64, gradient-norm clipping at 1, standardized target.
-    With `stopping`, return the epoch with the best hold-out RMSE (patience rule)."""
+    """Adam, batch 64, gradient clipping at 1; optional early stopping."""
     random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
     model = neural_class(kind)(X.shape[2], cfg["hidden_size"], cfg["layers"])
     opt = torch.optim.Adam(model.parameters(), lr=cfg["learning_rate"], weight_decay=cfg["weight_decay"])
@@ -253,8 +246,7 @@ def neural_fit(kind, X, y, cfg, seed, epochs, stopping=None):
 
 
 def neural_cv(kind, data, cfg):
-    """Outer chronological CV. In each fold the last 20 % of the training windows choose the epoch
-    count, then the model is refitted on the whole fold training set. Final epochs = median over folds."""
+    """Chronological CV; the number of epochs is the median over folds."""
     ends = np.arange(cfg["window"] - 1, N_TRAIN)
     scores, chosen = [], []
     for k, (tr, va) in enumerate(folds(len(ends)), 1):

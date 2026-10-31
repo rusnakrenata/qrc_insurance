@@ -1,12 +1,8 @@
-"""Linear and nonlinear information-processing capacity of the five frozen candidates (post-hoc).
-
-Same probe, seeds, features and train/evaluation split as compute_final_candidate_memory.py.
-Targets are products of empirical orthonormal polynomials of the probe channels at a fixed
-set of delays; each is reconstructed by a linear ridge readout on the 18 one-body features.
+"""Linear and nonlinear information-processing capacity of the five frozen candidates.
 
   python analysis/analyze_nonlinear_capacity.py
 
-Writes results/capacity/ (CSV and JSON). Needs results/memory/ for the summary columns.
+Needs results/memory/. Writes results/capacity/.
 """
 import itertools
 import json
@@ -27,13 +23,12 @@ from qrc.reservoir import encode  # noqa: E402
 OUT = os.path.join(HERE, "..", "results", "capacity")
 DELAYS = [0, 1, 2, 3, 5, 10, 18, 20, 25]       # 18 and 25 are the K_eff of C4 and C5
 CHANNELS = ["C", "D", "P", "H"]
-SMOOTH = (0, 1, 2)     # H is a rare binary flag: linear targets only (products with it are not orthogonal in a 365-day sample)
+SMOOTH = (0, 1, 2)     # H: binary, linear targets only
 NULL_TARGETS, NULL_SEED = 300, 2027
 
 
 def orthonormal_basis(x, degree=3):
-    """Polynomials p_0..p_degree orthonormal on the empirical distribution of x (Gram-Schmidt).
-    Returns the coefficient vectors (lowest power first); a degree whose residual vanishes is None."""
+    """Orthonormal polynomials on the empirical distribution of x."""
     powers = np.vstack([x ** d for d in range(degree + 1)]).T
     basis, coefs = [], []
     for d in range(degree + 1):

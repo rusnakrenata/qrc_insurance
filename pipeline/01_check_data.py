@@ -16,11 +16,11 @@ df = pd.read_csv(path, parse_dates=["input_date", "target_date"])
 
 C, Y = "property_damage_claim_count_t", "target_property_damage_claim_count"
 
-# consecutive days, and the target of day t is the claim count of day t+1
+# consecutive days; target of day t = claims of day t+1
 assert df.target_date.is_unique and (df.target_date.diff().dropna().dt.days == 1).all()
 assert ((df.target_date - df.input_date).dt.days == 1).all()
 assert (df[C].values[1:] == df[Y].values[:-1]).all()
-# calendar inputs refer to the target day and are known one day ahead
+# calendar inputs refer to the target day
 assert (df.day_of_week_t_plus_1 == df.target_date.dt.dayofweek + 1).all()
 
 split = df.split.value_counts()

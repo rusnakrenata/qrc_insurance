@@ -1,8 +1,7 @@
-"""Per-observable view of the hardware distortion.
+"""Per-observable fit z_qpu = eta * z_ideal + zeta and contribution w_j * mean(dz_j) to the mean shift.
 
-For every run and measured observable z_j we fit  z_qpu = eta * z_ideal + zeta
-(contraction eta, offset zeta) and attribute the mean forecast shift to
-observables through the linear readout:  mean(delta) = sum_j w_j * mean(dz_j).
+  python analysis/observables.py
+
 Writes results/observables.csv.
 """
 import argparse
@@ -36,7 +35,7 @@ def main():
                              weight=w[j], ideal_sd=zi.std(), eta=eta, zeta=zeta,
                              mean_dz=float(np.mean(zq - zi)), shift_contribution=float(w[j] * np.mean(zq - zi)),
                              corr=float(np.corrcoef(zi, zq)[0, 1])))
-        # consistency check: contributions add up to the measured level shift
+        # contributions sum to the level shift
         tot = sum(x["shift_contribution"] for x in rows[-len(names):])
         assert abs(tot - r.level_shift) < 1e-6, (r.candidate, r["round"], r.approach)
     pd.DataFrame(rows).to_csv(os.path.join(a.out, "observables.csv"), index=False)

@@ -1,9 +1,7 @@
-"""One hardware round: one candidate, one layout policy (ha, random or qiskit).
+"""One hardware round for one candidate and layout policy (ha, random or qiskit).
 
   python pipeline/12_hardware_round.py --candidate 2 --policy ha --round runs/c2_r1 --token <IBM token>
   python pipeline/12_hardware_round.py --candidate 2 --policy ha --round runs/test --dry-run --limit 6
-
-Run the three policies on the same --round folder at the same time.
 """
 import argparse
 import json
@@ -110,7 +108,7 @@ def select_layout(policy, backend, m, args, noise_model, folder):
         layout, pool = random_layout(backend, c["edges"], check, seed)
         return layout, dict(policy="random", seed=seed, native_pool=pool)
 
-    # hardware-aware: native embeddings -> workload proxy -> Aer screening -> QPU probe
+    # HA: embeddings -> proxy -> Aer -> QPU probe
     eligible = set(range(backend.num_qubits)) - faulty_qubits(backend)
     rows = []
     for layout in native_embeddings(c["edges"], coupling_graph(backend), eligible):
@@ -165,7 +163,7 @@ def main():
     ideal_X = rwp_features(m["A"], test, m["c"]["window"], m["c"]["features"])
     ideal = ideal_X @ m["w"] + m["b"]
 
-    # shared snapshot: the first policy to arrive stores it, the others reuse it
+    # first policy stores the calibration snapshot, the others reuse it
     snap = os.path.join(args.round, "noise_model.json")
     if not os.path.exists(snap):
         model = NoiseModel.from_backend(backend, gate_error=True, thermal_relaxation=True, readout_error=False)

@@ -2,7 +2,7 @@
 
 All RMSE and d values in claims/day on the 2026 test days. Medians over rounds.
 
-## Concern 1: does d vanish when the readout is trained on hardware data?
+## Readout trained on hardware features
 
 | label | policy | runs | frozen_rmse_qpu | frozen_d | affine_probe_d | affine_oracle_d | qpu_cv_rmse | ideal_cv_rmse | classical_cv_rmse | qpu_cv_d | hardware_effect_cv |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -25,7 +25,7 @@ All RMSE and d values in claims/day on the 2026 test days. Medians over rounds.
 | C5 | random | 3 | 6.148 | 3.148 | nan | 0.997 | 5.578 | 5.311 | 5.573 | 1.685 | 0.267 |
 
 
-## Concern 2: standardised readout weights (claims/day per SD) and case labels
+## Standardized readout weights (claims/day per SD)
 
 | label | observable | eta_median | beta_frozen | beta_ideal2026 | beta_qpu2026_median | importance_qpu2026_median | case_frozen_vs_qpu | case_ideal2026_vs_qpu |
 |---|---|---|---|---|---|---|---|---|

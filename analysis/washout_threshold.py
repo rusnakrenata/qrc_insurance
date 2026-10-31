@@ -1,9 +1,7 @@
-"""Sensitivity of the C4/C5 replay windows to the washout threshold epsilon (Sec. IV-D).
+"""Sensitivity of the C4/C5 replay windows to the washout threshold epsilon.
 
   python analysis/washout_threshold.py
 
-For each epsilon: washout steps of the trace and feature distances, replay window W, and the 2025 RMSE of the
-continuous readout applied to replayed features, compared with continuous operation.
 Writes results/design/washout_epsilon.csv.
 """
 import importlib.util

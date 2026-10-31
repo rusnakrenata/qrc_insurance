@@ -10,11 +10,6 @@
     4,
     5
   ],
-  "job_ids": [
-    "db4933cvf2bc73cu964g",
-    "db49i3imb58s7388t1ag",
-    "db4a9d84qg6s73c1te70"
-  ],
   "calibration_policy": "record_drift",
   "shots": 2048,
   "optimization_level": 1,

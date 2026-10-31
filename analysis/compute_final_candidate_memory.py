@@ -1,4 +1,4 @@
-"""Delayed-input memory of the five frozen candidates for k = 1..120 (post-hoc).
+"""Delayed-input memory of the five frozen candidates, k = 1..120.
 
   python analysis/compute_final_candidate_memory.py [--kmax 120] [--check]
 

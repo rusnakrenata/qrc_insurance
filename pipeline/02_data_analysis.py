@@ -34,7 +34,7 @@ def save(df, name):
     df.to_csv(os.path.join(OUT, name), index=False)
     print(f"\n{name}\n{df.round(4).to_string(index=False)}")
 
-# ordinary least squares regression with a constant, given a target and one or more blocks of covariates
+# OLS with intercept
 def ols(y, *blocks):
     X = sm.add_constant(pd.concat(blocks, axis=1), has_constant="add")
     return sm.OLS(y, X).fit()
@@ -54,8 +54,7 @@ def audit(df):
 
 
 def screen_raw(path):
-    """Relevance of every numeric column of day t for C_{t+1}, and its correlation with active policies.
-    Training rows only (target dates 2022-01-02 .. 2024-12-31)."""
+    """Relevance of each column of day t for C_{t+1} (training rows only)."""
     raw = pd.read_csv(path, parse_dates=["date"]).sort_values("date").reset_index(drop=True)
     raw["target"] = raw["claim_count_maj"].shift(-1)
     tr = raw[(raw.date >= "2022-01-01") & (raw.date <= "2024-12-30")].dropna(subset=["target"])
@@ -83,7 +82,7 @@ def r2_gain_permutation(y, base, extra, strata, n_perm, seed):
 
 
 def feature_set_gate(df):
-    """2025 RMSE of Ridge (CV-chosen penalty), Poisson and NB2 GLMs on F2, F3, F4 (exposure as standardized covariate)."""
+    """2025 RMSE of ridge, Poisson and NB2 on F2, F3 and F4."""
     tr, va = df.iloc[:1095], df.iloc[1095:1460]
     alphas = [1e-4, 1e-3, 1e-2, 0.03, 0.1, 0.3, 0.5, 1, 2, 3, 5, 6, 6.25, 6.5, 6.6, 6.75, 7, 7.5, 8, 9, 10, 15, 20, 25, 30, 50, 75, 100]
     rows = []
@@ -119,7 +118,7 @@ def relevance(tr):
 
 
 def main():
-    matplotlib.use("Agg") 
+    matplotlib.use("Agg")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--raw", default=os.path.join(HERE, "..", "data", "raw", "qrc_daily_dataset.csv"))
     ap.add_argument("--permutations", type=int, default=10000)
@@ -171,7 +170,7 @@ def main():
     week = pd.get_dummies(tr[D].astype(str), prefix="dow", drop_first=True, dtype=float)
     hold = tr[[H]].astype(float)
 
-    # exposure: claim frequency per year, and value of P_t beyond the calendar and a time trend
+    # exposure
     allyears = df.assign(year=pd.to_datetime(df.target_date).dt.year).groupby("year").agg(
         n_days=(Y, "size"), total_claims=(Y, "sum"), total_policy_days=(P, "sum"), mean_active_policies=(P, "mean"))
     allyears["claims_per_100k_policy_days"] = 1e5 * allyears.total_claims / allyears.total_policy_days
@@ -183,7 +182,7 @@ def main():
     save(pd.DataFrame([dict(model=k, r_squared=(m := ols(y, *v)).rsquared, adjusted_r_squared=m.rsquared_adj,
                             aic=m.aic, bic=m.bic) for k, v in models.items()]), "exposure_models.csv")
 
-    # lagged claims: incremental R^2 of one older lag beyond calendar + P_t + C_t
+    # older lags
     base_blocks = [week, hold, pz, tr[[C]].astype(float)]
     base = ols(y, *base_blocks).rsquared
     hist = df[Y].shift(1).iloc[:1095].reset_index(drop=True)          # C_t, indexed like the training rows
@@ -196,7 +195,7 @@ def main():
         rows.append(dict(lag=k, n=int(ok.sum()), delta_r_squared=r2 - r2_base))
     save(pd.DataFrame(rows).assign(base_r_squared=base), "lag_relevance.csv")
 
-    # nonlinear relevance (mutual information with permutation baseline)
+    # mutual information
     save(relevance(tr), "nonlinear_relevance.csv")
 
     # redundancy among the F4 inputs
@@ -221,7 +220,7 @@ def main():
                                                                    DISCRETE[name], SEED)))
     save(pd.DataFrame(rows), "regime_by_year.csv")
 
-    # the gate that fixed the input set before the nonlinear benchmark (2025 used, 2026 not)
+    # feature-set gate on 2025
     save(feature_set_gate(df), "feature_set_gate.csv")
 
 

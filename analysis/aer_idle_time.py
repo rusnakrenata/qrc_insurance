@@ -1,11 +1,7 @@
-"""Idle time in the calibrated Aer simulation of the HA runs (Sec. V, VI-B).
+"""Idle time of the layout qubits in the calibrated Aer simulation of the HA runs.
 
-For the 21 HA runs: delay instructions in the simulated circuits (noisy_circuits.qpy), the
-time each layout qubit spends in its own gates (calibrated gate lengths) against the circuit
-duration, and the contraction eta of every observable in Aer and on the QPU. A round trip
-through qrc/noise.py shows that the saved noise model loses the relaxation of idle periods.
+  python analysis/aer_idle_time.py
 
-Usage:  python analysis/aer_idle_time.py
 Writes results/aer_idle/.
 """
 import json

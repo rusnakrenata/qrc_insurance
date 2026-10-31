@@ -78,9 +78,7 @@ def rule_r2(t):
 
 
 def rule_r3(t):
-    """Shot-resolvable set -> lowest CV; the diagonal forecast shot-SD proxy only breaks ties.
-    Without a resolvable candidate: worst shot-to-training-SD ratio -> proxy -> CV.
-    Same hierarchy as the original selection (select_hardware_aware_row)."""
+    """Lowest CV among shot-resolvable reservoirs; the shot-noise proxy breaks ties."""
     ok = t[t.all_resolvable]
     if len(ok):
         return ok.sort_values(["cv_rmse", "forecast_shot_sd_1024", "settings", "cz_per_feature_vector"]).iloc[0]
@@ -178,7 +176,7 @@ def main():
     out.to_csv(os.path.join(OUT, "rules_representatives.csv"), index=False)
     print("max |CV - recorded| =", (out.cv_rmse - out.cv_recorded).abs().max())
 
-    # rule properties that can be checked on the representatives themselves
+    # rule checks
     checks = []
     for (proto, g), t in out.groupby(["protocol", "graph"]):
         r1 = t[t.rules.str.contains("R1")].iloc[0]

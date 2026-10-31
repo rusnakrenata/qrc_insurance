@@ -1,4 +1,4 @@
-"""Design stage 6: the five candidates (Pareto front of the noisy screen), replay windows for C4/C5 and the frozen readouts.
+"""Design stage 6: the five candidates, replay windows of C4/C5 and frozen readouts.
 
   python pipeline/10_design_freeze.py
 
@@ -28,9 +28,7 @@ FEATURES = {"XZ_injection": ["X0", "X1", "X2", "X3", "Z0", "Z1", "Z2", "Z3"],
 
 
 def chosen_candidates():
-    """Candidates from the noisy screen: every reservoir with a Pareto-nondominated operating point
-    (2025 RMSE, CZ per feature vector, shots per setting; all minimized), frozen at the Trotter depth
-    of its lowest-RMSE nondominated point and numbered C1, C2, ... by that RMSE."""
+    """Reservoirs with a Pareto-nondominated point (RMSE, CZ, shots), numbered by RMSE."""
     s = pd.read_csv(os.path.join(DATA, "noise_sampled_summary.csv"))
     v = s[["rmse_mean", "feature_vector_n_cz", "shots_per_setting"]].to_numpy(float)
     front = s[[not (np.all(v <= x, axis=1) & np.any(v < x, axis=1)).any() for x in v]]
@@ -56,8 +54,7 @@ def washout_steps(res, S, F, eps=0.01):
 
 
 def fold_local_lambda(df, rep, edges, J, r, W, names, y):
-    """Penalty by chronological CV in which the input z-scores (and hence the quantum features)
-    are refitted inside every fold on the inputs available up to its last training day."""
+    """Ridge penalty by chronological CV with input scaling refitted in each fold."""
     from sklearn.model_selection import TimeSeriesSplit
     ends = np.arange(W - 1, 1095) if rep.protocol == "RWP" else np.arange(1095)
     res = Reservoir(2, edges, J, rep.hx, rep.hy, rep["dt"], r)
@@ -109,7 +106,7 @@ def main():
             W = int(rep.window)
             ends = np.arange(W - 1, 1095)
             X, fit_rows = res.rwp(S, F, ends, W), ends
-        # fold-local readout: penalty re-chosen by chronological CV with per-fold standardization
+        # fold-local readout
         lam_old, cv_old, _ = select_lambda(X, y[fit_rows], LAMBDAS)       # before the correction
         lam, cvm = fold_local_lambda(df, rep, edges, Jl, r, W if rep.protocol == "RWP" else 1, names, y)
         frozen = CANDIDATES[k]

@@ -87,10 +87,7 @@ _P = {"I": np.eye(2, dtype=complex), "X": np.array([[0, 1], [1, 0]], dtype=compl
 
 
 class Reservoir:
-    """4 injection qubits + n_mem memory qubits; H = sum J ZZ + hx sum X + hy sum_mem Y, r Trotter slices.
-
-    Precomputes, per input day, the memory channel S_t (vec(rho) -> vec(rho')) and the linear
-    functionals F_t that give observable expectations from the memory state before the step."""
+    """Reservoir with 4 injection and n_mem memory qubits."""
 
     def __init__(self, n_mem, edges, J, hx, hy=0.0, dt=1.6, r=2):
         self.n_mem, self.n = n_mem, 4 + n_mem
@@ -108,9 +105,7 @@ class Reservoir:
         return _reduce(np.kron, [_P[paulis.get(q, "I")] for q in range(self.n)])
 
     def maps(self, theta, names):
-        """S (T, DM^2, DM^2) and F (T, n_features, DM^2) for every input row.
-        S_t: state of the memory register and F_t: expectation value of observables.
-        both are just fucntion and are used to simplify the calculations (we do not need to perfrom matrix operations)"""
+        """Memory channels S_t and observable functionals F_t for every input row."""
         obs = []
         for name in names:                                  # 'X3', 'Z5' or two-body like 'YX45'
             ps, qs = (name[:1], name[1:]) if len(name) == 2 else (name[:2], name[2:])

@@ -1,4 +1,4 @@
-"""Predictors of the hardware distortion available before deployment (probe, proxy, Aer).
+"""Pre-deployment predictors of the hardware distortion (probe, proxy, Aer).
 
   python analysis/distortion_model.py
 """

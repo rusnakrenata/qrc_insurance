@@ -1,10 +1,8 @@
-"""Collect every final IBM Kingston run into one table.
-
-Reads the raw run folders in data/ibm_kingston_runs (never modified) and writes
-results/runs.csv (one row per QPU evaluation) and results/daily.csv
-(one row per run and forecast date).
+"""Collect all IBM Kingston runs into one table.
 
   python analysis/build_run_table.py
+
+Writes results/runs.csv and results/daily.csv.
 """
 import argparse
 import glob
@@ -18,7 +16,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 APPROACHES = ["hardware-aware", "random", "qiskit"]
 
-# Logical coupling graphs of the five final candidates (logical qubit indices).
+# logical graphs of C1-C5
 EDGES = {
     "H0": [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5)],
     "H2": [(0, 1), (1, 2), (2, 3), (2, 4), (4, 5)],
@@ -89,7 +87,7 @@ def run_rows(run_dir, rnd, props, proxy):
         e_q, e_i, delta = pq - y, pi - y, pq - pi
         assert abs(rmse(e_q) - m["qpu"]["rmse"]) < 1e-8
 
-        # Aer simulations with the shared calibrated noise snapshot (same layout).
+        # Aer with the calibration snapshot of the round
         noisy = {}
         for label in ["noisy_direct"] + [f"noisy_shots{plan['test_shots']}_rep{k}" for k in (1, 2, 3)]:
             p = os.path.join(folder, label + "_predictions.csv")
@@ -112,7 +110,7 @@ def run_rows(run_dir, rnd, props, proxy):
             # measured quantities
             qpu_rmse=rmse(e_q), qpu_mae=float(np.mean(np.abs(e_q))), qpu_bias=float(np.mean(e_q)),
             ideal_rmse=rmse(e_i), ideal_mae=float(np.mean(np.abs(e_i))), ideal_bias=float(np.mean(e_i)),
-            # derived transfer quantities (hardware prediction minus ideal prediction)
+            # delta = hardware - ideal
             transfer_d=rmse(delta), level_shift=float(np.mean(delta)),
             level_share=float(np.mean(delta) ** 2 / np.mean(delta ** 2)),
             gap_median=float(np.median(np.abs(delta))), gap_p95=float(np.percentile(np.abs(delta), 95)),

@@ -1,10 +1,8 @@
-"""Noiseless diagnostics of the five frozen reservoirs (no hardware involved).
+"""Noiseless diagnostics: encoding range, refit on 2022-2025, window ablation, shot-noise floor.
 
-  1. Encoding range: how often the 2025/2026 inputs leave the training range.
-  2. Readout refitted on 2022-2025 (same features, same lambda) vs Ridge refitted the same way.
-  3. Memory-window ablation for the two long-window candidates (C4, C5).
-  4. Shot-noise floor of the transfer distortion, sqrt(kappa/N).
-Writes results/tables/ideal_*.csv
+  python analysis/ideal_diagnostics.py
+
+Writes results/tables/ideal_*.csv.
 """
 import os
 import sys
@@ -65,7 +63,7 @@ def main():
                                                                 / df.active_policy_count_t.values[idx] * 1000))))
     pd.DataFrame(rows).to_csv(os.path.join(OUT, "ideal_encoding_range.csv"), index=False)
 
-    # 2. readout refitted through 2025 and 3. window ablation
+    # refit through 2025, window ablation
     refit, ablation, floors = [], [], []
     for k, c in CANDIDATES.items():
         theta = encode(df, c["alpha"], **sc)
@@ -73,7 +71,7 @@ def main():
         ep = np.arange(c["window"] - 1, 1692)
         X = features(c, A, ep)
         Xf = pd.DataFrame(X, index=ep)
-        if c["protocol"] == "CONT":     # readout trained on continuous features, deployed with RWP window
+        if c["protocol"] == "CONT":
             Xc = cont_features(A, c["features"])
             fit_X, fit_y = Xc[TRAIN], y[TRAIN]
             fit_X25, fit_y25 = Xc[np.r_[TRAIN, VAL]], y[np.r_[TRAIN, VAL]]
@@ -90,7 +88,7 @@ def main():
                           rmse_2026=rmse(p26 - y[TEST]), bias_2026=float(np.mean(p26 - y[TEST])),
                           rmse_2026_refit=rmse(p26b - y[TEST]), bias_2026_refit=float(np.mean(p26b - y[TEST]))))
 
-        # 4. shot-noise floor: kappa = mean_t w' Sigma_t w with single-shot covariances per setting
+        # shot-noise floor sqrt(kappa / N)
         kap = []
         for t in TEST:
             rho = state_at(A, t, c["window"])

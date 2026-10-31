@@ -1,8 +1,7 @@
-"""Wall-clock time to fit each selected classical model on 2022-2024 and forecast the 232 test days.
+"""Fit and forecast time of the selected classical models (single thread, median of three).
 
   python analysis/timing_classical.py
 
-Single thread, median of three repetitions (one seed for ESN, RNN and GRU).
 Writes results/timing/classical_timing.csv.
 """
 import importlib.util

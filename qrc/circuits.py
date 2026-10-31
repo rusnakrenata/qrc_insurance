@@ -1,9 +1,4 @@
-"""Qiskit circuits for the reservoir and conversion of measured counts into features.
-
-One circuit per forecast date and measurement setting: W reset-encode-evolve
-steps followed by a basis change and a full measurement. Logical qubit q is
-circuit qubit q; the physical placement is chosen later at transpilation.
-"""
+"""Reservoir circuits and conversion of measurement counts into features."""
 import numpy as np
 from qiskit import QuantumCircuit
 

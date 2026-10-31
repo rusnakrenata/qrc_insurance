@@ -8,6 +8,5 @@
     73
   ],
   "calibration": "2026-10-10T09:15:43+00:00",
-  "metric": "RMS QPU prediction minus ideal prediction on 100 training inputs",
-  "job_id": "db50nk2mb58s7389rgjg"
+  "metric": "RMS QPU prediction minus ideal prediction on 100 training inputs"
 }

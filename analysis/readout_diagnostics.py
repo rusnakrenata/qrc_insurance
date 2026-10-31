@@ -1,16 +1,8 @@
-"""Frozen versus refitted readouts (Sec. II-C, VI-B, VI-C).
+"""Frozen versus refitted readouts and standardized readout weights.
 
-For every stored run, the 2026 features are read out by
-  frozen     the deployed ridge readout, fitted on ideal features of 2022-2024
-  affine     the frozen readout after a per-observable linear map from QPU to ideal features
-             (fitted on the probe dates for HA runs, and on the 2026 days as an upper bound)
-  refitted   ridge readouts fitted on QPU, ideal and classical-input features of the same
-             2026 days (4 contiguous blocks, each predicted by a readout trained on the others)
-It also reports standardized readout weights (claims/day per SD of the observable),
-drop-column importance, and the memory test in simulation (readouts refitted on W = 1 features).
+  python analysis/readout_diagnostics.py
 
-Usage:  python analysis/readout_diagnostics.py
-Writes results/readout_diagnostics/; headline.json holds the numbers quoted in the article.
+Writes results/readout_diagnostics/.
 """
 import argparse
 import glob
@@ -42,8 +34,7 @@ def rmse(e):
 
 
 def ridge(X, y, lam):
-    """Closed-form ridge on standardised columns (as qrc.readout.fit_ridge); constant columns get weight 0.
-    Returns raw weights w, intercept b and standardised coefficients beta (claims/day per SD)."""
+    """Closed-form ridge on standardized columns; returns w, b and beta."""
     mu, sd = X.mean(0), X.std(0)
     ok = sd > 1e-12
     Z = (X[:, ok] - mu[ok]) / sd[ok]
@@ -172,7 +163,7 @@ def analyse_run(k, policy, rnd, d26, probe, fr, y, Xclass, label):
                frozen_d=rmse(p_q - p_ideal), frozen_shift=float(np.mean(p_q - p_ideal)))
     out["frozen_d_noshift"] = float(np.std(p_q - p_ideal))
 
-    # per-observable linear map: on 2026 (upper bound) and on the probe dates
+    # affine map QPU -> ideal
     a, c0 = affine_map(Zq, Zi)
     p_aff = (Zq * a + c0) @ w + b
     out.update(affine_oracle_rmse=rmse(p_aff - yt), affine_oracle_d=rmse(p_aff - p_ideal))
@@ -190,7 +181,7 @@ def analyse_run(k, policy, rnd, d26, probe, fr, y, Xclass, label):
         out.update(probe_ridge_rmse_qpu=rmse(pq_probe - yt), probe_ridge_rmse_ideal_control=rmse(pi_probe - yt),
                    probe_ridge_d=rmse(pq_probe - pi_probe))
 
-    # readouts refitted on 2026 (blocked CV), QPU and controls
+    # refitted readouts (blocked CV)
     pq_cv = blocked_cv_predict(Zq, yt)
     pi_cv = blocked_cv_predict(Zi, yt)
     pc_cv = blocked_cv_predict(Xclass[ends], yt)
@@ -314,7 +305,7 @@ def main():
     with open(os.path.join(args.out, "headline.json"), "w") as fh:
         json.dump(head, fh, indent=1)
 
-    # weights: medians over runs, relative magnitudes, case labels
+    # weight summary
     g = W.groupby(["label", "observable"], sort=False)
     wsum = g.agg(memory=("memory", "first"), eta_median=("eta", "median"), beta_frozen=("beta_frozen", "first"),
                  beta_ideal2026=("beta_ideal2026", "first"), beta_qpu2026_median=("beta_qpu2026", "median"),
@@ -330,10 +321,10 @@ def main():
     ha = summ[summ.policy.isin(["hardware-aware", "session-full", "session-w1"])]
     rep = ["# Frozen versus hardware-trained readouts\n",
            "All RMSE and d values in claims/day on the 2026 test days. Medians over rounds.\n",
-           "## Concern 1: does d vanish when the readout is trained on hardware data?\n",
+           "## Readout trained on hardware features\n",
            md(summ[["label", "policy", "runs", "frozen_rmse_qpu", "frozen_d", "affine_probe_d", "affine_oracle_d",
                     "qpu_cv_rmse", "ideal_cv_rmse", "classical_cv_rmse", "qpu_cv_d", "hardware_effect_cv"]]),
-           "\n## Concern 2: standardised readout weights (claims/day per SD) and case labels\n",
+           "\n## Standardized readout weights (claims/day per SD)\n",
            md(wsum[["label", "observable", "eta_median", "beta_frozen", "beta_ideal2026", "beta_qpu2026_median",
                     "importance_qpu2026_median", "case_frozen_vs_qpu", "case_ideal2026_vs_qpu"]]),
            "\n## Memory in simulation\n", md(mem)]

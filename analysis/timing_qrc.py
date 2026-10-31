@@ -1,5 +1,4 @@
-"""Wall-clock time of the ideal (noiseless) QRC: readout fit on 2022-2024 and the 232 test forecasts,
-plus the recorded IBM Kingston QPU time of every run.
+"""Time of the ideal QRC (readout fit and test forecasts) and QPU time of every run.
 
   python analysis/timing_qrc.py
 

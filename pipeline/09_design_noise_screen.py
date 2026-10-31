@@ -1,4 +1,4 @@
-"""Design stage 5: calibrated-noise screening of the 33 rule representatives and the Pareto front.
+"""Design stage 5: calibrated-noise screening of the rule representatives.
 
   python pipeline/09_design_noise_screen.py
   python pipeline/09_design_noise_screen.py --simulate RWP_H3_R4 --calibration <run folder>|fake [--days 20]

@@ -1,11 +1,4 @@
-"""C4 memory ablation on IBM Kingston (Sec. VI-C).
-
-Three arms on one HA layout, run in the order w1, scrambled, full:
-  w1         a single step: encode day t, evolve, measure (about 5 us)
-  scrambled  117 steps; steps 1-116 take the inputs of random training days, step 117 is day t
-  full       117 steps with the true input history (the deployed circuit)
-The frozen C4 readout is applied to every arm, and the 2026 RMSE is compared with each stored
-full-window C4 run in data/ibm_kingston_runs/candidate4.
+"""C4 memory ablation on IBM Kingston: arms w1, scrambled and full on one HA layout.
 
   python analysis/memory_ablation.py --compare-only data/ibm_kingston_ablation/candidate4/20261023T123117Z
   python analysis/memory_ablation.py --ideal-only
@@ -13,9 +6,7 @@ full-window C4 run in data/ibm_kingston_runs/candidate4.
   python analysis/memory_ablation.py --token <IBM token>
   python analysis/memory_ablation.py --resume <session folder> --token <IBM token>
 
-One token for all arms (--token or IBM_TOKEN) or one per arm (--token-w1, --token-scrambled,
---token-full); tokens are never stored. On --resume, finished batches are kept and failed
-jobs are submitted again.
+The token can also be given as IBM_TOKEN. It is not stored.
 """
 import argparse
 import glob
@@ -315,7 +306,7 @@ def compare(folder):
             j = d[["endpoint", "actual", "pred_qpu"]].merge(ref[["endpoint", "pred_qpu"]], on="endpoint", suffixes=("", "_ref"))
             t = paired((j.pred_qpu - j.actual).values, (j.pred_qpu_ref - j.actual).values, margin)
             rows.append(dict(arm=arm, reference=name, **t, verdict=verdict(t)))
-    # noiseless model: each ablation against the ideal W = 117 forecast
+    # noiseless ablations
     ideal = []
     if "full" in arms:
         for arm in ("w1", "scrambled"):

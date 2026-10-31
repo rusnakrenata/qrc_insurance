@@ -122,7 +122,7 @@ def fig_hardware():
         a.set_xticklabels([f"C{c}" for c in range(1, 6)])
         a.set_ylabel(lab)
         a.set_title("(a)" if j == 0 else "(b)", loc="left")
-    # 1 cm of white space between the panels when printed at 0.8 \textwidth
+    # gap between panels
     fig.tight_layout(w_pad=4.4)
     fig.canvas.draw()
     rend = fig.canvas.get_renderer()
